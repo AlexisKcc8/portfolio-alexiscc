@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Avatar from "@assets/my-avatar.png";
+const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
+---
+
+<section
+  class="relative flex flex-col justify-center items-center text-center px-12"
+>
+  <div
+    class="absolute w-3/4 h-1/2 bg-blue-100 rounded-full blur-3xl opacity-90 -z-10"
+  >
+  </div>
+  <Image
+    src={Avatar}
+    alt="logo Servitec"
+    class="w-58 h-58 object-cover object-center laptop:w-64 laptop:h-64 rounded-full"
+    data-aos="fade-up"
+  />
+  <h1 class="text-5xl prose font-bold mb-6 tablet:text-7xl desktop:text-7xl">
+    Hola, soy <span class="text-blue-500">Alexis Chim</span><br />
+  </h1>
+  <p class="text-base text-black mb-6 tablet:text-xl desktop:max-w-[60%]">
+    Me enfoco en desarrollar interfaces web que <strong
+      >transforman ideas</strong
+    > en experiencias atractivas y accesibles, siempre pensando en el usuario, el
+    <strong>rendimiento</strong> y los <strong>pequeños detalles</strong> que hacen
+    la diferencia.
+  </p>
+  <div
+    class="flex flex-col gap-4 w-full tablet:flex-row tablet:w-4/5 laptop:w-1/2"
+  >
+    <a
+      href="#projects"
+      class="bg-blue-500 text-white w-full px-2 py-4 rounded-[.5rem] hover:bg-blue-600 transition"
+    >
+      🚀 Mira lo que puedo construir
+    </a>
+    <a
+      href="#services"
+      class="bg-blue-50 text-[#005bab] w-full px-2 py-4 rounded-[.5rem] hover:bg-blue-100 transition"
+    >
+      💡 Mira mis soluciones digitales
+    </a>
+  </div>
+  <footer class="my-7 flex justify-center items-center gap-4">
+    {
+      iconTools.map((icon) => (
+        <Icon name={icon} class="w-8 h-8 justify-center items-center" />
+      ))
+    }
+  </footer>
+</section>
