@@ -1,26 +1,60 @@
-<section class="px-6 py-12 bg-gray-50">
-  <h2 class="text-2xl font-bold mb-8 text-center">Lo que puedo hacer por ti</h2>
-  <div class="grid gap-6">
-    <div class="p-6 bg-white rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold">✨ Landing pages que venden</h3>
-      <p class="text-sm text-gray-500">
-        Diseños persuasivos, rápidos y optimizados para conversión.
-      </p>
-    </div>
-    <div class="p-6 bg-white rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold">🛒 E-commerce efectivos</h3>
-      <p class="text-sm text-gray-500">
-        Tiendas modernas con UX impecable, listas para vender.
-      </p>
-    </div>
-    <div class="p-6 bg-white rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold">📱 Web apps intuitivas</h3>
-      <p class="text-sm text-gray-500">
-        Interfaces como app, con buen rendimiento y estructura clara.
-      </p>
-    </div>
+---
+import { myServices } from "@data/myServices";
+import { Image } from "astro:assets";
+import { twMerge } from "tailwind-merge";
+---
+
+<section class="px-4 py-16 bg-white mx-auto max-w-[90%] laptop:max-w-4/5">
+  <h2 class="text-4xl font-bold text-start mb-3">
+    💼 Servicios que impulsan tu presencia online
+  </h2>
+  <p class="mb-8 text-gray-600 prose-sm">
+    Diseño y desarrollo web a medida para que tu presencia digital no solo se
+    vea bien, sino que funcione y conecte.
+  </p>
+
+  <div class="grid grid-cols-12 gap-4">
+    {
+      myServices.map((service) => (
+        <div
+          class={twMerge(
+            "relative rounded-xl  col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] tablet:max-h-[32rem] laptop:h-[30rem] ",
+            service.classCard
+          )}
+          data-aos="fade-up"
+          data-aos-delay={service.delay}
+        >
+          <header class={twMerge("p-6 mb-2", service.classHeader)}>
+            <h3 class=" font-medium  mb-2 text-gray-700">
+              <span class="rounded-full bg-white p-2">{service.emoji}</span>{" "}
+              {service.title}
+            </h3>
+            <p class="text-lg font-semibold ">{service.description}</p>
+          </header>
+          <div
+            class={twMerge(
+              "flex justify-end items-center flex-1 relative overflow-hidden pl-6",
+              service.classContainerImage
+            )}
+          >
+            <Image
+              src={service.urlImg}
+              alt="image service"
+              class={twMerge(
+                "w-full h-full object-cover object-center",
+                service.classImage
+              )}
+              data-aos="fade-up"
+            />
+          </div>
+          {/* <!-- Overlay con difuminado de abajo hacia arriba --> */}
+          <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white via-white/60 to-transparent z-10" />
+        </div>
+      ))
+    }
   </div>
 </section>
+
 <section class="px-6 py-12 bg-gray-50">
   <h2 class="text-2xl font-bold mb-8 text-center">
     ¿Listo para llevar tu proyecto al siguiente nivel?
