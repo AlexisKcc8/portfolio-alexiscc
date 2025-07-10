@@ -1,4 +1,3 @@
-import service1 from "@assets/service1.jpg";
 import serviceWebPage from "@assets/service-WebPage.svg";
 import serviceLandingPage from "@assets/service-Landing.svg";
 import serviceInvitations from "@assets/service-Invite.svg";

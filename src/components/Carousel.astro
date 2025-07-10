@@ -1,0 +1,79 @@
+---
+// import { Icon } from "astro-icon/components";
+import { twMerge } from "tailwind-merge";
+// Props para hacer el componente reutilizable
+const { carouselId, class: className } = Astro.props;
+---
+
+<section
+  class={twMerge("relative w-full overflow-hidden mx-0 mb-14", className)}
+>
+  <!-- Contenedor de las cards con scroll horizontal -->
+  <div class="relative overflow-hidden">
+    <div
+      class="flex gap-4 overflow-x-scroll snap-x snap-mandatory scroll-smooth no-scrollbar px-4 py-6 items-stretch laptop:pl-[8.5rem]"
+      style="will-change: transform;"
+      data-carousel={carouselId}
+    >
+      <slot />
+    </div>
+  </div>
+  <!-- <footer
+    class={`flex justify-end items-center py-2 px-4 gap-4 text-black font-bold text-xl laptop:pr-14`}
+  >
+    <button
+      data-prev={carouselId}
+      class="bg-[#dcdce1] w-[2.5rem] h-[2.5rem] rounded-full z-10 flex justify-center items-center laptop:hover:cursor-pointer"
+    >
+      <Icon name="prev" class="text-diled-gray/70" />
+    </button>
+
+    <button
+      data-next={carouselId}
+      class="bg-[#dcdce1] w-[2.5rem] h-[2.5rem] rounded-full z-10 flex justify-center items-center laptop:hover:cursor-pointer"
+    >
+      <Icon name="next" class="text-diled-gray/70" />
+    </button>
+  </footer> -->
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-prev]").forEach((btn) => {
+      btn.addEventListener("click", () =>
+        scrollTo((btn as HTMLElement).dataset.prev || "", "prev")
+      );
+    });
+
+    document.querySelectorAll("[data-next]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const carouselId = (btn as HTMLElement).dataset.next || "";
+        scrollTo(carouselId, "next");
+      });
+    });
+
+    function scrollTo(carouselId: string, direction: string) {
+      const container = document.querySelector(
+        `[data-carousel='${carouselId}']`
+      );
+      if (!container) return;
+
+      const scrollAmount = container.firstElementChild
+        ? container.firstElementChild.clientWidth + 24
+        : 0; // Ancho de la tarjeta + gap
+      container.scrollBy({
+        left: direction === "next" ? scrollAmount : -scrollAmount,
+      });
+    }
+  });
+</script>

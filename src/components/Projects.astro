@@ -1,17 +1,20 @@
-<section class="px-6 py-12">
-  <h2 class="text-2xl font-bold mb-6 text-center">Proyectos destacados</h2>
-  <div class="space-y-8">
-    <div class="bg-white p-6 rounded-xl shadow-md">
-      <img
-        src="/images/project1.jpg"
-        alt="Proyecto 1"
-        class="rounded-lg mb-4"
-      />
-      <h3 class="text-lg font-semibold">Tienda Electrónica Servitec</h3>
-      <p class="text-sm text-gray-500 mb-2">E-commerce con React + Tailwind</p>
-      <a href="https://servitec.mx" class="text-blue-500 underline text-sm"
-        >Ver en vivo</a
-      >
-    </div>
-  </div>
+---
+import { myProjects } from "@data/myProjects";
+import Carousel from "./Carousel.astro";
+import CardProject from "./CardProject.astro";
+---
+
+<section id="projects" class="bg-[#f5f5f7] pt-10 pb-4">
+  <header class="px-4 mx-auto max-w-[90%] laptop:max-w-4/5">
+    <h2 class="text-4xl font-bold text-start mb-3">
+      ⌨️ Mi vitrina de desarrollos
+    </h2>
+    <p class="mb-8 text-gray-600 prose-sm">
+      Este espacio reúne mis proyectos más sólidos, pensados para destacar en
+      diseño, funcionalidad y eficiencia.
+    </p>
+  </header>
+  <Carousel carouselId="solutions-TOWNHOUSES" class="">
+    {myProjects.map((project) => <CardProject project={project} />)}
+  </Carousel>
 </section>
