@@ -1,8 +1,74 @@
-<section class="px-6 py-12 max-w-xl mx-auto">
-  <h2 class="text-2xl font-bold mb-4">¿Quién soy?</h2>
-  <p class="text-gray-600">
-    Soy un ingeniero en sistemas con enfoque en frontend. Me apasiona crear
-    interfaces limpias, accesibles y atractivas que convierten usuarios en fans.
-    Combino creatividad con eficiencia, y siempre busco aprender algo nuevo.
-  </p>
+---
+import { Image } from "astro:assets";
+import LaptopAboutMe from "@assets/img-about.jpg";
+import Avatar from "@assets/my-avatar.png";
+import { aboutMeData } from "@data/aboutMe";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  class="relative min-h-screen px-6 py-12 bg-[#f6f5f4] mx-auto rounded-xl max-w-[90%] laptop:max-w-[85%]"
+>
+  <Image
+    src={Avatar}
+    alt="img-my-avatar.png"
+    class="w-16 h-16 rounded-xl object-cover object-center absolute top-0 right-4 z-40"
+    data-aos="fade-up"
+  />
+  <header
+    class="relative laptop:flex laptop:items-center laptop:justify-between laptop:gap-4"
+  >
+    <div class="laptop:w-[60%]">
+      <span class="font-medium laptop:px-8">¿Quién es?</span>
+      <h2 class="font-bold text-2xl mb-4 laptop:text-3xl laptop:px-8">
+        Alexis Chim
+      </h2>
+      <div class="text-black text-xl laptop:px-8">
+        <p>
+          Apasionado por la tecnología y el diseño, con formación en ingeniería
+          y base en México.
+        </p>
+        <p class="my-2">
+          Desarrollo soluciones digitales que conectan con las personas,
+          combinando conocimiento técnico con una mirada creativa para construir
+          productos web accesibles, rápidos y visualmente atractivos.
+        </p>
+        <p>
+          Para mí, cada proyecto es una oportunidad de crear algo útil, humano y
+          memorable.
+        </p>
+      </div>
+    </div>
+
+    <picture class="mt-6 laptop:mt-0 laptop:w-[40%] laptop:h-80">
+      <Image
+        src={LaptopAboutMe}
+        alt="logo Servitec"
+        class="rounded-xl my-6 w-full h-full object-cover object-center laptop:my-0"
+        data-aos="fade-up"
+      />
+    </picture>
+  </header>
+  <section
+    class="laptop:grid laptop:grid-cols-3 border-t border-gray-200 laptop:mt-6"
+  >
+    {
+      aboutMeData.map((item, index) => (
+        <div
+          class={`mb-4 p-4 laptop:mb-0 laptop:p-8
+          ${index >= 3 ? "laptop:border-t laptop:border-gray-200" : ""}
+        `}
+          data-aos="fade-up"
+        >
+          <div class="hover:cursor-pointer hover:scale-105 transition-transform duration-300">
+            <header class="flex items-center  mb-2">
+              <Icon name={item.icon} class="h-8 w-8 transition-colors" />
+              <h3 class="font-semibold">{item.title}</h3>
+            </header>
+            <p class="text-gray-700 text-sm">{item.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </section>
 </section>

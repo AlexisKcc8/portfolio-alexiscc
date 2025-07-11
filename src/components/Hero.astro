@@ -1,12 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import Avatar from "@assets/my-avatar.png";
 const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
 ---
 
 <section
-  class="relative pt-20 flex flex-col justify-center items-center text-center px-8"
+  class="relative min-h-screen flex flex-col justify-center items-center text-center px-8"
 >
   <div
     class="absolute inset-0 -z-10"
@@ -16,12 +14,6 @@ const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
     }}
   >
   </div>
-  <!-- <Image
-    src={Avatar}
-    alt="logo Servitec"
-    class="w-58 h-58 object-cover object-center laptop:w-64 laptop:h-64 rounded-full"
-    data-aos="fade-up"
-  /> -->
   <span
     data-slot="badge"
     class="inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive overflow-hidden [a&]:hover:bg-secondary/90 gap-2 py-2 px-3 sm:px-4 text-xs sm:text-sm rounded-full shadow-lg backdrop-blur-md transition-all duration-300 border bg-white/80 border-gray-200/50 text-gray-900 hover:bg-white/90"
@@ -66,8 +58,19 @@ const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
   <h1
     class="text-4xl prose tablet:text-5xl desktop:text-6xl font-bold tracking-tight mt-6 mb-1"
   >
-    Hola, soy <span class="text-alx-900">Alexis Chim</span><br />
+    Hola, soy
+    <span class="inline-block relative">
+      <span class="flex items-center gap-2 text-alx-900">
+        Alexis
+        <Icon
+          name="cap"
+          class="w-10 h-10 tablet:w-12 tablet:h-12 desktop:w-14 desktop:h-14 transition-colors duration-300 text-alx-900"
+        />
+        Chim
+      </span>
+    </span>
   </h1>
+
   <h2
     class="mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold tracking-tight"
   >
@@ -79,8 +82,8 @@ const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
   <p
     class="text-base sm:text-lg mb-6 sm:mb-8 max-w-lg mx-auto leading-relaxed transition-colors duration-300 px-4 sm:px-0 text-gray-600"
   >
-    Enfocado en desarrollar interfaces web que <strong>transforman ideas</strong
-    > en experiencias atractivas y accesibles, siempre pensando en el usuario, el
+    <strong>Transformo ideas</strong> en experiencias atractivas y accesibles, siempre
+    pensando en el usuario, el
     <strong>rendimiento</strong> y los <strong>pequeños detalles</strong> que hacen
     la diferencia.
   </p>
