@@ -1,0 +1,79 @@
+---
+import { featuresMe } from "@data/featuresMe";
+import { Icon } from "astro-icon/components";
+// astro-icon carga los íconos dinámicamente, y si un <Icon name="..." /> está en un elemento que no entra al DOM (por ejemplo, porque es offscreen o duplicado para scroll infinito), entonces el SVG puede no inyectarse hasta que realmente aparece en pantalla.
+---
+
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  Componente de carrusel autodeslizante con duplicado de pista   ║
+║  para lograr un “loop” infinito suave.                          ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<section class="px-4 mx-auto w-full max-w-full laptop:max-w-[85%]">
+  <article class="relative w-full overflow-hidden">
+    {
+      /*
+      ╭───────────╮
+      │ Fades     │
+      ╰───────────╯
+      - pointer-events-none: el gradiente NO bloquea clicks debajo.
+      - z-10: se dibuja encima de la pista.
+    */
+    }
+    <div
+      class="pointer-events-none absolute inset-y-0 left-0 w-1/5
+             bg-gradient-to-r from-white to-transparent z-10"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute inset-y-0 right-0 w-1/5
+             bg-gradient-to-l from-white to-transparent z-10"
+    >
+    </div>
+    <div class="flex overflow-hidden border-x-2 border-white py-5">
+      {
+        /*
+        Creamos DOS pistas idénticas para lograr el efecto continuo:
+        ─ Pista 0 (aria-hidden=false): visible y accesible.
+        ─ Pista 1 (aria-hidden=true): duplicado invisible para lectores
+          de pantalla; se encadena al final de la primera.
+        La animación CSS (`animate-scroll`) mueve ambas pistas
+        al mismo tiempo → cuando la pista 0 sale, la pista 1 entra,
+        y viceversa.
+      */
+      }
+      {
+        [...Array(2)].map((_, trackIndex) => (
+          <div
+            aria-hidden={trackIndex === 1}
+            class="flex gap-6 pr-6 animate-scroll"
+          >
+            {/*
+            Recorremos cada feature y la pintamos:
+            - flex-none: evita que se encajen y así se mantengan en línea.
+            - whitespace-nowrap: evita saltos de línea.
+          */}
+            {featuresMe.map(({ id, title, icon }) => (
+              <div class="flex flex-none items-center gap-2 whitespace-nowrap">
+                {/* Usa inline en el <Icon />
+                Esto obliga a Astro a incrustar el SVG en el HTML renderizado
+                desde el inicio, incluso si no está visible. Así se resuelve el
+                problema del "parpadeo" o "no renderizado inicial". */}
+                <Icon
+                  is:inline
+                  name={icon}
+                  class="h-8 w-8  shrink-0 transition-colors text-gray-500 duration-200"
+                  aria-hidden="true"
+                />
+                <p class="text-sm laptop:text-base text-gray-500 font-semibold">
+                  {title}
+                </p>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</section>

@@ -1,8 +1,26 @@
+import LandingPageFotoGaby from "@assets/projects/LandingPage-FotoGaby.png";
+import LandingPageServitec from "@assets/projects/LandingPage-Servitec-Halacho.png";
 import codeChat from "@assets/projects/CodeChat.png";
 import easyBanck from "@assets/projects/easybank-mobile.png";
 import EcommerceSneakers from "@assets/projects/E-commerce-Product-Page-Sneakers.png";
 import LandingPageBookmark from "@assets/projects/Landing-page-bookmark.png";
 export const myProjects = [
+  {
+    urlImg: LandingPageFotoGaby,
+    nameProject: "Landing page Foto y Video Gaby",
+    description:
+      "Landing page responsiva desarrollada con React, TypeScript, Sass, Flexbox y Bootstrap. Enfoque Mobile-First y estructura semántica con HTML5.",
+    urlRepo: "https://github.com/AlexisKcc8/chat-realtime-react-kr.git",
+    urlLive: "https://foto-y-video-gaby.netlify.app/",
+  },
+  {
+    urlImg: LandingPageServitec,
+    nameProject: "Landing page Servitec Halachó",
+    description:
+      "Chat en tiempo real con React, Context API y Firebase. Autenticación integrada, mensajes instantáneos y estilos personalizados con Sass.",
+    urlRepo: "https://github.com/AlexisKcc8/chat-realtime-react-kr.git",
+    urlLive: "https://servitec-halacho.netlify.app/",
+  },
   {
     urlImg: codeChat,
     nameProject: "CodeChat: Chatea y comparte.",

@@ -63,3 +63,27 @@ body {
   font-style: normal;
   font-variation-settings: "slnt" 0;
 }
+
+/* ——— Animación marquee ——— */
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  /* mobile‑first */
+  animation: scrollX 75s linear infinite;
+}
+
+@media (min-width: 768px) {
+
+  /* ≥ tablet */
+  .animate-scroll {
+    animation-duration: 70s;
+  }
+}

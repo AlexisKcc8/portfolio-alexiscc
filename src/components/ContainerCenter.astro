@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+// create interface with extends HTMLAttributes<"section">
+interface Props extends HTMLAttributes<"section"> {}
+
+const { class: className } = Astro.props;
+---
+
+<section class={twMerge("laptop:w-[80%]", className)}>
+  <slot />
+</section>

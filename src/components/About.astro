@@ -7,7 +7,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section
-  class="relative min-h-screen px-6 py-12 bg-[#f6f5f4] mx-auto rounded-xl max-w-[90%] laptop:max-w-[85%]"
+  class="relative px-6 py-12 bg-[#f6f5f4] mx-auto rounded-xl max-w-[90%] laptop:max-w-[85%]"
 >
   <Image
     src={Avatar}
@@ -43,7 +43,7 @@ import { Icon } from "astro-icon/components";
     <picture class="mt-6 laptop:mt-0 laptop:w-[40%] laptop:h-80">
       <Image
         src={LaptopAboutMe}
-        alt="logo Servitec"
+        alt="img-about-me"
         class="rounded-xl my-6 w-full h-full object-cover object-center laptop:my-0"
         data-aos="fade-up"
       />
@@ -62,7 +62,7 @@ import { Icon } from "astro-icon/components";
         >
           <div class="hover:cursor-pointer hover:scale-105 transition-transform duration-300">
             <header class="flex items-center  mb-2">
-              <Icon name={item.icon} class="h-8 w-8 transition-colors" />
+              <Icon name={item.icon} class="h-8 w-8 mr-2 transition-colors" />
               <h3 class="font-semibold">{item.title}</h3>
             </header>
             <p class="text-gray-700 text-sm">{item.description}</p>
