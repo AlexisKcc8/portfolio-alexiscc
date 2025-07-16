@@ -1,9 +1,9 @@
-import LandingPageFotoGaby from "@assets/projects/LandingPage-FotoGaby.png";
+import LandingPageFotoGaby from "@assets/projects/LandingPage-FotoGaby.webp";
 import LandingPageServitec from "@assets/projects/LandingPage-Servitec-Halacho.webp";
-import codeChat from "@assets/projects/CodeChat.png";
-import easyBanck from "@assets/projects/easybank-mobile.png";
-import EcommerceSneakers from "@assets/projects/E-commerce-Product-Page-Sneakers.png";
-import LandingPageBookmark from "@assets/projects/Landing-page-bookmark.png";
+import codeChat from "@assets/projects/CodeChat.webp";
+import easyBanck from "@assets/projects/easybank-mobile.webp";
+import EcommerceSneakers from "@assets/projects/E-commerce-Product-Page-Sneakers.webp";
+import LandingPageBookmark from "@assets/projects/Landing-page-bookmark.webp";
 export const myProjects = [
   {
     urlImg: LandingPageFotoGaby,
