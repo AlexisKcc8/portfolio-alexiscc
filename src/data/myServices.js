@@ -9,8 +9,7 @@ export const myServices = [
     title: "Páginas web modernas",
     description:
       "Desarrollo de sitios web profesionales, responsivos y optimizados para todos los dispositivos.",
-    classCard:
-      "bg-[#fef3f1] border border-red-300 hover:bg-red-100 transition laptop:col-span-6",
+    classCard: "bg-[#fef3f1] hover:bg-red-100 transition laptop:col-span-6",
     urlImg: serviceWebPage,
     delay: "100",
   },

@@ -29,11 +29,11 @@ import { twMerge } from "tailwind-merge";
           data-aos-delay={service.delay}
         >
           <header class={twMerge("p-6 mb-2", service.classHeader)}>
-            <h3 class=" font-medium  mb-2 text-gray-700">
+            <h3 class=" font-medium  mb-2 text-gray-700 text-lg">
               <span class="rounded-full bg-white p-2">{service.emoji}</span>{" "}
               {service.title}
             </h3>
-            <p class="text-lg font-semibold ">{service.description}</p>
+            <p class="text-xl font-medium  ">{service.description}</p>
           </header>
           <div
             class={twMerge(
@@ -51,8 +51,6 @@ import { twMerge } from "tailwind-merge";
               data-aos="fade-up"
             />
           </div>
-          {/* <!-- Overlay con difuminado de abajo hacia arriba --> */}
-          <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white via-white/60 to-transparent z-10" />
         </div>
       ))
     }

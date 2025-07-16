@@ -12,7 +12,7 @@ const { nameProject, description, urlImg, urlRepo, urlLive } = project;
 >
   <div class="flex flex-col h-full">
     <picture
-      class="relative w-full bg-alx-100 rounded-2xl h-[25rem] phone-lg:h-[28rem] tablet:h-[32rem] laptop:h-[34rem] p-12 pb-0 mb-4"
+      class="relative w-full bg-alx-50 rounded-2xl h-[25rem] phone-lg:h-[28rem] tablet:h-[32rem] laptop:h-[36rem] p-12 pb-0 mb-4"
     >
       <Image
         src={urlImg}
@@ -20,25 +20,22 @@ const { nameProject, description, urlImg, urlRepo, urlLive } = project;
         class="w-full h-full object-cover object-top rounded-lg"
         data-aos="fade-up"
       />
-      <div
-        class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white via-white/80 to-transparent z-10"
-      >
-      </div>
     </picture>
 
     <div
       class="flex flex-col justify-between flex-1 text-center tablet:text-start px-6 laptop:p-0 laptop:pr-4"
     >
       <div>
-        <h5 class="font-bold text-gold-hover text-2xl mb-2">{nameProject}</h5>
+        <h5 class="font-bold text-black/80 text-2xl mb-2">{nameProject}</h5>
         <p class="text-gray-500 prose-sm">{description}</p>
       </div>
       <footer
         class="mt-4 flex justify-center items-center tablet:items-start tablet:justify-start gap-4"
       >
-        <LinkButton url={urlRepo} className="font-medium bg-gold-hover"
+        <LinkButton url={urlRepo} className="font-medium bg-alx-600"
           >💻Código</LinkButton
         >
+
         <LinkButton
           url={urlLive}
           className="font-medium border border-gold bg-transparent text-black"
