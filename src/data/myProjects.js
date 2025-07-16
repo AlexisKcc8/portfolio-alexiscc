@@ -1,5 +1,5 @@
 import LandingPageFotoGaby from "@assets/projects/LandingPage-FotoGaby.png";
-import LandingPageServitec from "@assets/projects/LandingPage-Servitec-Halacho.png";
+import LandingPageServitec from "@assets/projects/LandingPage-Servitec-Halacho.webp";
 import codeChat from "@assets/projects/CodeChat.png";
 import easyBanck from "@assets/projects/easybank-mobile.png";
 import EcommerceSneakers from "@assets/projects/E-commerce-Product-Page-Sneakers.png";
@@ -10,7 +10,7 @@ export const myProjects = [
     nameProject: "Landing page Foto y Video Gaby",
     description:
       "Landing page responsiva desarrollada con React, TypeScript, Sass, Flexbox y Bootstrap. Enfoque Mobile-First y estructura semántica con HTML5.",
-    urlRepo: "https://github.com/AlexisKcc8/chat-realtime-react-kr.git",
+    urlRepo: "https://github.com/AlexisKcc8/proyecto-foto-y-video-gaby.git",
     urlLive: "https://foto-y-video-gaby.netlify.app/",
   },
   {
@@ -18,7 +18,7 @@ export const myProjects = [
     nameProject: "Landing page Servitec Halachó",
     description:
       "Chat en tiempo real con React, Context API y Firebase. Autenticación integrada, mensajes instantáneos y estilos personalizados con Sass.",
-    urlRepo: "https://github.com/AlexisKcc8/chat-realtime-react-kr.git",
+    urlRepo: "https://github.com/AlexisKcc8/proyecto-servitec.git",
     urlLive: "https://servitec-halacho.netlify.app/",
   },
   {

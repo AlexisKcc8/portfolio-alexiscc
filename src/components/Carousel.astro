@@ -1,5 +1,6 @@
 ---
 // import { Icon } from "astro-icon/components";
+import { Icon } from "astro-icon/components";
 import { twMerge } from "tailwind-merge";
 // Props para hacer el componente reutilizable
 const { carouselId, class: className } = Astro.props;
@@ -18,8 +19,8 @@ const { carouselId, class: className } = Astro.props;
       <slot />
     </div>
   </div>
-  <!-- <footer
-    class={`flex justify-end items-center py-2 px-4 gap-4 text-black font-bold text-xl laptop:pr-14`}
+  <footer
+    class={`flex justify-center items-center py-2 px-4 gap-4 text-black font-bold text-xl tablet:justify-end laptop:pr-14`}
   >
     <button
       data-prev={carouselId}
@@ -34,7 +35,7 @@ const { carouselId, class: className } = Astro.props;
     >
       <Icon name="next" class="text-diled-gray/70" />
     </button>
-  </footer> -->
+  </footer>
 </section>
 
 <style>

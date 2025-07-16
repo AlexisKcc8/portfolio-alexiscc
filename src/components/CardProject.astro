@@ -12,7 +12,7 @@ const { nameProject, description, urlImg, urlRepo, urlLive } = project;
 >
   <div class="flex flex-col h-full">
     <picture
-      class="relative w-full bg-alx-50 rounded-2xl h-[25rem] phone-lg:h-[28rem] tablet:h-[32rem] laptop:h-[36rem] p-12 pb-0 mb-4"
+      class="relative w-full bg-alx-50 rounded-2xl h-[26rem] phone-lg:h-[28rem] tablet:h-[32rem] laptop:h-[36rem] p-5 pb-0 mb-4 tablet:p-12 tablet:pb-0"
     >
       <Image
         src={urlImg}
@@ -26,22 +26,37 @@ const { nameProject, description, urlImg, urlRepo, urlLive } = project;
       class="flex flex-col justify-between flex-1 text-center tablet:text-start px-6 laptop:p-0 laptop:pr-4"
     >
       <div>
-        <h5 class="font-bold text-black/80 text-2xl mb-2">{nameProject}</h5>
+        <h5 class="font-bold text-gray-800 text-2xl mb-2">{nameProject}</h5>
         <p class="text-gray-500 prose-sm">{description}</p>
       </div>
       <footer
-        class="mt-4 flex justify-center items-center tablet:items-start tablet:justify-start gap-4"
+        class="my-4 flex justify-center items-center tablet:items-start tablet:justify-start gap-4"
       >
-        <LinkButton url={urlRepo} className="font-medium bg-alx-600"
-          >💻Código</LinkButton
-        >
-
+        <LinkButton
+          url={urlRepo}
+          className=""
+          title="Código"
+          ,
+          subtitle="Repositorio en GitHub"
+          ,
+          nameIcon="github"
+          ,
+          containerIconClass="bg-alx-200"
+          ,
+          classIcon="text-alx-950"
+        />
         <LinkButton
           url={urlLive}
-          className="font-medium border border-gold bg-transparent text-black"
-        >
-          🌐Demo
-        </LinkButton>
+          className=""
+          title="Demo"
+          ,
+          subtitle="Sitio web en vivo"
+          ,
+          nameIcon="live"
+          ,
+          containerIconClass="bg-alx-50"
+          classIcon="text-alx-900"
+        />
       </footer>
     </div>
   </div>

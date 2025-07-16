@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import facebookPreview from "@assets/face_promotion1.png";
 import { Icon } from "astro-icon/components";
+import LinkButton from "./LinkButton.astro";
 ---
 
 <section
@@ -65,7 +66,7 @@ import { Icon } from "astro-icon/components";
       </p>
 
       <!-- Botón accesible -->
-      <a
+      <!-- <a
         href="https://www.facebook.com/profile.php?id=61578281609381"
         target="_blank"
         rel="noopener noreferrer"
@@ -75,7 +76,19 @@ import { Icon } from "astro-icon/components";
         <Icon name="icon-face" class="w-5 h-5" />
         Seguir a Alexis-KRCode
         <span class="sr-only">(se abre en nueva pestaña)</span>
-      </a>
+      </a> -->
+      <LinkButton
+        url="https://www.facebook.com/profile.php?id=61578281609381"
+        className="inline-flex text-xl justify-center items-center flex-shrink-1 gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition tablet:max-w-11/12"
+        title="Seguir a Alexis-KRCode"
+        ,
+        subtitle="vamos, vamos!"
+        ,
+        nameIcon="icon-face"
+        ,
+        containerIconClass="bg-alx-50"
+        classIcon="text-alx-900"
+      />
     </div>
 
     <!-- Imagen optimizada -->
