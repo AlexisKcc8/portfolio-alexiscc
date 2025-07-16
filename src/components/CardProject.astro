@@ -18,6 +18,8 @@ const { nameProject, description, urlImg, urlRepo, urlLive } = project;
         src={urlImg}
         alt={`image of ${nameProject}`}
         class="w-full h-full object-cover object-top rounded-lg"
+        loading="lazy"
+        decoding="async"
         data-aos="fade-up"
       />
     </picture>
