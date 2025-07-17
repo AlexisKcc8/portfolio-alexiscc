@@ -1,0 +1,128 @@
+---
+import { Icon } from "astro-icon/components";
+
+const experience = [
+  {
+    title: "Landing Page • Diled Smart Home",
+    role: "Diseñador y Desarrollador",
+    description:
+      "Transformamos una idea en una experiencia web moderna y eficaz.",
+    steps: [
+      "Estructura validada con el cliente para objetivos claros",
+      "Diseño en Figma enfocado en usabilidad y conversión",
+      "Desarrollo responsivo con Astro, Tailwind CSS y TypeScript",
+      "Optimización SEO, accesibilidad y rendimiento",
+      "Integración de WhatsApp y microinteracciones elegantes",
+    ],
+  },
+  {
+    title: "Landing Page • Servitec Halachó",
+    role: "Diseñador y Desarrollador",
+    description:
+      "Diseñé una landing profesional enfocada en destacar servicios tecnológicos y facilitar el contacto con clientes potenciales.",
+    steps: [
+      "Definición de objetivos con enfoque comercial",
+      "Interfaz intuitiva con llamados a la acción visibles",
+      "SEO local para destacar en buscadores regionales",
+      "Catálogo de productos con pasarela de servicios",
+      "Proceso ágil, enfocado en entregas efectivas y feedback continuo",
+    ],
+  },
+  {
+    title: "Soluciones Web • Proyectos Personales",
+    role: "Desarrollador Web Full Stack",
+    description:
+      "Desarrollo de experiencias web integrales que combinan diseño moderno, velocidad y funcionalidad para cualquier tipo de negocio.",
+    steps: [
+      "Diseño y desarrollo frontend con enfoque mobile-first",
+      "Integración de APIs REST para contenido dinámico",
+      "Backends ligeros con Node.js y despliegues automatizados",
+      "Experiencias rápidas y optimizadas con métricas reales",
+      "Uso de animaciones y transiciones suaves que elevan el diseño",
+    ],
+  },
+];
+---
+
+<section
+  id="experiencia"
+  class="text-center mx-auto max-w-[90%] laptop:max-w-[85%] flex flex-col tablet:flex-row gap-8 relative"
+>
+  <aside
+    class="w-full sticky top-0 z-50 shadow-[0_30px_40px_-10px_rgba(255,255,255,1)] tablet:pt-0 tablet:pb-0 tablet:relative tablet:w-[40%] tablet:mb-0"
+  >
+    <header
+      class="sticky top-0 py-4 bg-white z-50 tablet:sticky tablet:top-[20%] tablet:text-start"
+    >
+      <div
+        class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 py-1 px-3 rounded-full uppercase tracking-wideraria-invalid:border-destructive overflow-hidden [a&]:hover:bg-secondary/90 gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-500 hover:bg-white/90"
+      >
+        Estrategia + Diseño + Tecnología
+      </div>
+      <h2
+        class="text-4xl font-bold leading-snug tablet:text-5xl laptop:text-6xl"
+      >
+        Experiencia digital con propósito
+      </h2>
+    </header>
+  </aside>
+
+  <aside class="tablet:w-[60%] relative">
+    <div class="relative w-full">
+      {
+        experience.map((exp, index) => (
+          <div
+            class:list={index === 0 ? "mt-0" : "mt-24"}
+            class={`sticky top-38 z-[${10 + index}] transition-all duration-500 ease-in-out bg-gradient-to-tr from-alx-50 to-alx-100 rounded-2xl px-6 py-8 mx-auto  overflow-hidden flex flex-col tablet:flex-row tablet:items-center tablet:text-start  gap-6`}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            {/* Número enumerado */}
+            <div class="w-full flex justify-center items-center tablet:w-[20%]">
+              <div class="z-20 aspect-square bg-alx-200 border-[2px] border-alx-600 rounded-full flex-none flex justify-center items-center w-16 relative ">
+                <p class="font-poppins text-[1.75rem] font-bold">{index + 1}</p>
+
+                <div class="bg-alx-600 absolute w-[15rem] h-[2px] left-[115%] tablet:w-[2px] tablet:h-[10rem] tablet:bottom-[115%] tablet:left-auto" />
+                <div class="bg-alx-600 absolute w-[15rem] h-[2px] right-[115%] tablet:w-[2px] tablet:h-[10rem] tablet:top-[115%] tablet:right-auto" />
+              </div>
+            </div>
+
+            {/* Contenido principal */}
+            <div class="w-full flex flex-col justify-center items-center laptop:items-start ">
+              {/* Badge con animación */}
+              <span
+                data-slot="badge"
+                class=" bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 py-1 px-3 rounded-full uppercase tracking-wideraria-invalid:border-destructive overflow-hidden [a&]:hover:bg-secondary/90 gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-500 hover:bg-white/90"
+              >
+                <div class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
+                </div>
+                <span class="font-medium">{exp.role}</span>
+                <Icon
+                  name="lightning"
+                  class="lucide lucide-zap h-3 w-3 text-orange-500"
+                />
+              </span>
+
+              <h3 class="text-2xl font-medium text-gray-900 mb-2 leading-snug">
+                {exp.title}
+              </h3>
+              {/* Descripción principal */}
+              <p class=" text-gray-900 leading-snug">{exp.description}</p>
+
+              {/* Lista de logros */}
+              {exp.steps?.length > 0 && (
+                <ul class="mt-4 list-disc list-inside text-gray-800 space-y-1 ">
+                  {exp.steps.map((step, idx) => (
+                    <li>{step}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </aside>
+</section>
