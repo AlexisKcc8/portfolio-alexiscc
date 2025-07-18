@@ -23,3 +23,10 @@ import ExperienceSection from "@components/ExperienceSection.astro";
   <Contact />
   <Footer />
 </Layout>
+
+<script>
+  import { initAOS } from "@scripts/aos";
+  document.addEventListener("DOMContentLoaded", () => {
+    initAOS();
+  });
+</script>
