@@ -56,7 +56,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3  font-medium rounded-full border border-gray-300 text-white bg-alx-500 hover:bg-alx-600 transition-colors duration-200"
           >
-            <img src="/src/icons/live.svg" alt="" className="w-4 h-4" />
+            <img src="/icons/live.svg" alt="" className="w-4 h-4" />
             Live
           </a>
           <a
@@ -65,7 +65,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 font-medium rounded-full border border-gray-300 text-gray-700 hover:bg-alx-100 transition-colors duration-200"
           >
-            <img src="/src/icons/github.svg" alt="" className="w-4 h-4" />
+            <img src="/icons/github.svg" alt="" className="w-4 h-4" />
             Code
           </a>
         </footer>
