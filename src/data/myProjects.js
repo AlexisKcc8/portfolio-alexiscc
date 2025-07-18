@@ -1,6 +1,6 @@
 export const myProjects = [
   {
-    urlImg: "/src/assets/projects/LandingPage-FotoGaby.webp",
+    urlImg: "/projects/LandingPage-FotoGaby.webp",
     nameProject: "Landing page Foto y Video Gaby",
     description:
       "Landing page responsiva desarrollada con React, TypeScript, Sass, Flexbox y Bootstrap. Enfoque Mobile-First y estructura semántica con HTML5.",
@@ -8,7 +8,7 @@ export const myProjects = [
     urlLive: "https://foto-y-video-gaby.netlify.app/",
   },
   {
-    urlImg: "/src/assets/projects/LandingPage-Servitec-Halacho.webp",
+    urlImg: "/projects/LandingPage-Servitec-Halacho.webp",
     nameProject: "Landing page Servitec Halachó",
     description:
       "Chat en tiempo real con React, Context API y Firebase. Autenticación integrada, mensajes instantáneos y estilos personalizados con Sass.",
@@ -16,7 +16,7 @@ export const myProjects = [
     urlLive: "https://servitec-halacho.netlify.app/",
   },
   {
-    urlImg: "/src/assets/projects/CodeChat.webp",
+    urlImg: "/projects/CodeChat.webp",
     nameProject: "CodeChat: Chatea y comparte.",
     description:
       "Chat en tiempo real con React, Context API y Firebase. Autenticación integrada, mensajes instantáneos y estilos personalizados con Sass.",
@@ -24,7 +24,7 @@ export const myProjects = [
     urlLive: "https://codechat-alx-kr.netlify.app",
   },
   {
-    urlImg: "/src/assets/projects/easybank-mobile.webp",
+    urlImg: "/projects/easybank-mobile.webp",
     nameProject: "Easybank landing page",
     description:
       "Landing page responsiva desarrollada con React, TypeScript, Sass, Flexbox y Bootstrap. Enfoque Mobile-First y estructura semántica con HTML5.",
@@ -33,7 +33,7 @@ export const myProjects = [
     urlLive: "https://easy-bank-alxkr.netlify.app/",
   },
   {
-    urlImg: "/src/assets/projects/E-commerce-Product-Page-Sneakers.webp",
+    urlImg: "/projects/E-commerce-Product-Page-Sneakers.webp",
     nameProject: "E-commerce product page sneakers",
     description:
       "Interfaz de tienda responsiva construida con React, Sass y Flexbox. Manejo de carrito persistente con LocalStorage. Reto de Frontend Mentor.",
@@ -42,7 +42,7 @@ export const myProjects = [
     urlLive: "https://ecommerce-sneakers-with-react-alx-cc.netlify.app/",
   },
   {
-    urlImg: "/src/assets/projects/Landing-page-bookmark.webp",
+    urlImg: "/projects/Landing-page-bookmark.webp",
     nameProject: "Bookmark landing page",
     description:
       "Landing moderna creada con React, Tailwind CSS y HTML5. Animaciones con Animate.css y visibilidad de secciones usando react-intersection-observer.",
