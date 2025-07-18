@@ -23,18 +23,18 @@ import { twMerge } from "tailwind-merge";
       myServices.map((service) => (
         <div
           class={twMerge(
-            "relative rounded-xl  col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] tablet:max-h-[32rem] laptop:h-[30rem] ",
+            "relative rounded-xl  col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] text-start tablet:max-h-[32rem] laptop:h-[30rem] ",
             service.classCard
           )}
           data-aos="fade-up"
           data-aos-delay={service.delay}
         >
           <header class={twMerge("p-6 mb-2", service.classHeader)}>
-            <h3 class=" font-medium  mb-2 text-gray-700 text-lg">
+            <h3 class=" font-medium  mb-2 text-gray-700">
               <span class="rounded-full bg-white p-2">{service.emoji}</span>{" "}
               {service.title}
             </h3>
-            <p class="text-xl font-medium  ">{service.description}</p>
+            <p class="text-lg font-medium  ">{service.description}</p>
           </header>
           <div
             class={twMerge(

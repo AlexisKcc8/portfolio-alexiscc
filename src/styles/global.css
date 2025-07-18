@@ -12,17 +12,17 @@
 
 @theme {
   /* Colores principales */
-  --color-alx-50: #e8f1ff;
-  --color-alx-100: #d5e5ff;
-  --color-alx-200: #b3ceff;
-  --color-alx-300: #85acff;
-  --color-alx-400: #567bff;
-  --color-alx-500: #2f4bff;
-  --color-alx-600: #0c16ff;
-  --color-alx-700: #0008ff;
-  --color-alx-800: #060fcd;
-  --color-alx-900: #101a9f;
-  --color-alx-950: #0a0e5c;
+  --color-alx-50: #faf5ff;
+  --color-alx-100: #f3e9fe;
+  --color-alx-200: #e9d6fe;
+  --color-alx-300: #d8b6fc;
+  --color-alx-400: #bf88f8;
+  --color-alx-500: #a75af2;
+  --color-alx-600: #8a2be2;
+  --color-alx-700: #7d28c8;
+  --color-alx-800: #6a25a4;
+  --color-alx-900: #572083;
+  --color-alx-950: #3b0a61;
 
   /* Colores secundarios */
   --color-background: #F8F8F8;

@@ -20,34 +20,36 @@ import { Icon } from "astro-icon/components";
   >
     <div class="laptop:w-[60%]">
       <span class="font-medium laptop:px-8">¿Quién es?</span>
-      <h2 class="font-bold text-2xl mb-4 laptop:text-3xl laptop:px-8">
+      <h2 class="font-bold text-xl mb-2 laptop:text-2xl laptop:px-8">
         Alexis Chim
       </h2>
-      <div class="text-black text-xl laptop:px-8">
+      <div
+        class="text-black text-lg tablet:text-xl laptop:text-2xl laptop:px-8"
+      >
         <p>
-          Apasionado por la tecnología y el diseño, con formación en ingeniería
-          y base en México.
+          Cuento con formación en ingeniería en sistemas y soy orgullosamente
+          mexicano.
         </p>
         <p class="my-2">
-          Desarrollo soluciones digitales que conectan con las personas,
-          combinando conocimiento técnico con una mirada creativa para construir
-          productos web accesibles, rápidos y visualmente atractivos.
+          Me encanta la tecnología y el diseño. Me gusta crear soluciones
+          digitales que conectan con la gente, uniendo lo técnico con lo
+          creativo para lograr sitios web rápidos, accesibles y con estilo.
         </p>
         <p>
-          Para mí, cada proyecto es una oportunidad de crear algo útil, humano y
-          memorable.
+          Para mí, cada proyecto es la chance de hacer algo útil, humano y que
+          deje huella.
         </p>
       </div>
     </div>
 
-    <picture class="mt-6 laptop:mt-0 laptop:w-[40%] laptop:h-80">
+    <div class="mt-6 laptop:mt-0 overflow-hidden laptop:h-80 laptop:w-[50%]">
       <Image
         src={LaptopAboutMe}
         alt="img-about-me"
         class="rounded-xl my-6 w-full h-full object-cover object-center laptop:my-0"
         data-aos="fade-up"
       />
-    </picture>
+    </div>
   </header>
   <section
     class="laptop:grid laptop:grid-cols-3 border-t border-gray-200 laptop:mt-6"
