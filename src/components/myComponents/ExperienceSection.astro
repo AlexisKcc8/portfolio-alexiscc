@@ -1,6 +1,6 @@
 ---
 import { experience } from "@data/myExperience";
-import { Icon } from "astro-icon/components";
+import { CardExperience } from "./CardExperience";
 ---
 
 <section
@@ -28,57 +28,7 @@ import { Icon } from "astro-icon/components";
     <div class="relative w-full">
       {
         experience.map((exp, index) => (
-          <div
-            class:list={index === 0 ? "mt-0" : "mt-16"}
-            class={`sticky top-4 z-[${10 + index}] snap-center bg-gradient-to-tr from-alx-50 to-alx-100 rounded-2xl px-6 py-8 mx-auto  overflow-hidden flex flex-col tablet:flex-row tablet:items-center tablet:text-start  gap-6`}
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
-            data-aos-once="false"
-          >
-            {/* Número enumerado */}
-            <div class="w-full flex justify-center items-center tablet:w-[20%]">
-              <div class="z-20 aspect-square bg-alx-200 border-[2px] border-alx-600 rounded-full flex-none flex justify-center items-center w-16 relative ">
-                <p class="font-poppins text-[1.75rem] font-bold">{index + 1}</p>
-
-                <div class="bg-alx-600 absolute w-[15rem] h-[2px] left-[115%] tablet:w-[2px] tablet:h-[10rem] tablet:bottom-[115%] tablet:left-auto" />
-                <div class="bg-alx-600 absolute w-[15rem] h-[2px] right-[115%] tablet:w-[2px] tablet:h-[10rem] tablet:top-[115%] tablet:right-auto" />
-              </div>
-            </div>
-
-            {/* Contenido principal */}
-            <div class="w-full flex flex-col justify-center items-center laptop:items-start ">
-              {/* Badge con animación */}
-              <span
-                data-slot="badge"
-                class=" bg-alx-200 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 py-1 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-500 hover:bg-white/90"
-              >
-                <div class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-alx-400 opacity-75" />
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-alx-500" />
-                </div>
-                <span class="font-medium">{exp.role}</span>
-                <Icon
-                  name="lightning"
-                  class="lucide lucide-zap h-3 w-3 text-orange-500"
-                />
-              </span>
-
-              <h3 class="text-2xl font-medium text-gray-900 mb-2 leading-snug">
-                {exp.title}
-              </h3>
-              {/* Descripción principal */}
-              <p class=" text-gray-900 leading-snug">{exp.description}</p>
-
-              {/* Lista de logros */}
-              {exp.steps?.length > 0 && (
-                <ul class="mt-4 list-disc list-inside text-gray-800 space-y-1 ">
-                  {exp.steps.map((step, idx) => (
-                    <li>{step}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
+          <CardExperience client:load exp={exp} numberProject={index + 1} />
         ))
       }
     </div>
