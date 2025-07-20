@@ -1,7 +1,7 @@
 import type { CardProjectProps } from "src/interface/iProjects";
 
 export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
-  const { nameProject, description, urlImg } = project;
+  const { nameProject, description, urlImg, urlLive, urlRepo } = project;
 
   return (
     <div
@@ -51,7 +51,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
 
         <footer className="flex justify-center tablet:justify-start items-center gap-3 mt-auto pt-4">
           <a
-            href="https://tu-live-demo.com"
+            href={urlLive}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3  font-medium rounded-full border border-gray-300 text-white bg-alx-500 hover:bg-alx-600 transition-colors duration-200"
@@ -60,7 +60,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
             Live
           </a>
           <a
-            href="https://github.com/tu-repo"
+            href={urlRepo}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 font-medium rounded-full border border-gray-300 text-gray-700 hover:bg-alx-100 transition-colors duration-200"

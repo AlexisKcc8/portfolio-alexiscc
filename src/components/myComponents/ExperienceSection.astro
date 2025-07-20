@@ -1,6 +1,7 @@
 ---
 import { experience } from "@data/myExperience";
-import { CardExperience } from "./CardExperience";
+import CardExperience from "./CardExperience.astro";
+// import { CardExperience } from "./CardExperience";
 ---
 
 <section
@@ -28,7 +29,7 @@ import { CardExperience } from "./CardExperience";
     <div class="relative w-full">
       {
         experience.map((exp, index) => (
-          <CardExperience client:load exp={exp} numberProject={index + 1} />
+          <CardExperience exp={exp} numberProject={index + 1} />
         ))
       }
     </div>
