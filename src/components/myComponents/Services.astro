@@ -2,58 +2,61 @@
 import { myServices } from "@data/myServices";
 import { Image } from "astro:assets";
 import { twMerge } from "tailwind-merge";
+import ContainerCenter from "./ContainerCenter.astro";
 ---
 
 <section
   id="services"
-  class="min-h-screen py-16 text-center bg-white mx-auto max-w-[90%] tablet:max-w-[85%]"
+  class="flex justify-center items-center text-center bg-white"
 >
-  <header class="flex flex-col items-center text-center">
-    <div
-      class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none py-2 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-900"
-    >
-      Potencio tu marca o negocio con.
-    </div>
-    <h2 class="text-4xl font-bold mb-6 tablet:text-4xl laptop:text-5xl">
-      Soluciones digitales hechas para destacar
-    </h2>
-  </header>
+  <ContainerCenter>
+    <header class="flex flex-col items-center text-center">
+      <div
+        class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none py-2 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-900"
+      >
+        Potencio tu marca o negocio con.
+      </div>
+      <h2 class="text-4xl font-bold mb-6 tablet:text-4xl laptop:text-5xl">
+        Soluciones digitales hechas para destacar
+      </h2>
+    </header>
 
-  <div class="grid grid-cols-12 gap-4">
-    {
-      myServices.map((service) => (
-        <div
-          class={twMerge(
-            "relative rounded-xl  col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] text-start tablet:max-h-[32rem] laptop:h-[30rem] ",
-            service.classCard
-          )}
-          data-aos="fade-up"
-          data-aos-delay={service.delay}
-        >
-          <header class={twMerge("p-6 mb-2", service.classHeader)}>
-            <h3 class=" font-medium  mb-2 text-gray-700">
-              <span class="rounded-full bg-white p-2">{service.emoji}</span>{" "}
-              {service.title}
-            </h3>
-            <p class="text-lg font-medium  ">{service.description}</p>
-          </header>
+    <div class="grid grid-cols-12 gap-4">
+      {
+        myServices.map((service) => (
           <div
             class={twMerge(
-              "flex justify-end items-center flex-1 relative overflow-hidden pl-6",
-              service.classContainerImage
+              "relative rounded-xl  col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] text-start tablet:max-h-[32rem] laptop:h-[30rem] ",
+              service.classCard
             )}
+            data-aos="fade-up"
+            data-aos-delay={service.delay}
           >
-            <Image
-              src={service.urlImg}
-              alt="image service"
+            <header class={twMerge("p-6 mb-2", service.classHeader)}>
+              <h3 class=" font-medium  mb-2 text-gray-700">
+                <span class="rounded-full bg-white p-2">{service.emoji}</span>{" "}
+                {service.title}
+              </h3>
+              <p class="text-xl font-medium  ">{service.description}</p>
+            </header>
+            <div
               class={twMerge(
-                "w-full h-full object-cover object-center",
-                service.classImage
+                "flex justify-end items-center flex-1 relative overflow-hidden pl-6",
+                service.classContainerImage
               )}
-            />
+            >
+              <Image
+                src={service.urlImg}
+                alt="image service"
+                class={twMerge(
+                  "w-full h-full object-cover object-center",
+                  service.classImage
+                )}
+              />
+            </div>
           </div>
-        </div>
-      ))
-    }
-  </div>
+        ))
+      }
+    </div>
+  </ContainerCenter>
 </section>

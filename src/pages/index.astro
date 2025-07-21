@@ -11,6 +11,7 @@ import Services from "@components/myComponents/Services.astro";
 import BannerFacebook from "@components/myComponents/BannerFacebook.astro";
 import Contact from "@components/myComponents/Contact.astro";
 import Footer from "@components/myComponents/Footer.astro";
+import BannerMessage from "@components/myComponents/BannerMessage.astro";
 ---
 
 <Layout>
@@ -19,15 +20,9 @@ import Footer from "@components/myComponents/Footer.astro";
   <AutomaticCarouselFade />
   <ExperienceSection />
   <Projects />
+  <BannerMessage />
   <Services />
   <BannerFacebook />
   <Contact />
   <Footer />
 </Layout>
-
-<script>
-  import { initAOS } from "@scripts/aos";
-  document.addEventListener("DOMContentLoaded", () => {
-    initAOS();
-  });
-</script>

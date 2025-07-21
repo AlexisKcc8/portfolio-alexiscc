@@ -1,32 +1,38 @@
 ---
 import { experience } from "@data/myExperience";
 import CardExperience from "./CardExperience.astro";
-// import { CardExperience } from "./CardExperience";
 ---
 
 <section
   id="experiencia"
-  class="text-center snap-y snap-mandatory min-h-[100vh] mx-auto max-w-[90%] laptop:max-w-[85%] flex flex-col tablet:flex-row relative"
+  aria-labelledby="experiencia-title"
+  class="text-center py-16 min-h-screen mx-auto max-w-[90%] laptop:max-w-[85%] flex flex-col tablet:flex-row snap-y snap-mandatory"
 >
-  <aside class="w-full tablet:pr-2 tablet:relative tablet:w-[40%] tablet:mb-0">
+  <!-- Lado izquierdo: encabezado -->
+  <aside class="w-full tablet:w-[40%] tablet:pr-2 mb-8 tablet:mb-0">
     <header
-      class="sticky top-0 py-4 bg-white z-50 tablet:sticky tablet:top-[20%] tablet:text-start"
+      class="sticky top-0 z-40 bg-white py-4 tablet:top-[20%] tablet:text-start"
     >
+      <!-- Pill de sección -->
       <div
-        class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none py-2 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-900"
+        class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit text-xs sm:text-sm text-alx-900 rounded-full px-3 py-2 gap-2 uppercase shadow-sm"
       >
         Estrategia + Diseño + Tecnología
       </div>
+
+      <!-- Título principal -->
       <h2
-        class="text-4xl font-bold leading-snug tablet:text-5xl laptop:text-6xl"
+        id="experiencia-title"
+        class="mt-4 text-3xl tablet:text-4xl laptop:text-5xl font-bold leading-tight text-gray-900"
       >
         Experiencia digital con propósito
       </h2>
     </header>
   </aside>
 
+  <!-- Lado derecho: cards -->
   <aside class="tablet:w-[60%] relative">
-    <div class="relative w-full">
+    <div class="space-y-8 w-full">
       {
         experience.map((exp, index) => (
           <CardExperience exp={exp} numberProject={index + 1} />

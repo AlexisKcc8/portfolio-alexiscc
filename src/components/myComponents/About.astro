@@ -7,28 +7,35 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section
-  class="relative px-6 py-12 bg-alx-50 mx-auto rounded-xl max-w-[90%] laptop:max-w-[85%]"
+  class="relative px-4 py-10 bg-alx-50 mx-auto rounded-xl max-w-[90%] laptop:max-w-[85%]"
+  aria-labelledby="about-me-title"
 >
+  <!-- Avatar -->
   <Image
     src={Avatar}
-    alt="img-my-avatar.png"
+    alt="Fotografía de Alexis Chim"
+    width={64}
+    height={64}
     class="w-16 h-16 rounded-xl object-cover object-center absolute top-0 right-4 z-40"
-    data-aos="fade-in"
+    loading="lazy"
+    decoding="async"
   />
+
   <header
     class="relative laptop:flex laptop:items-center laptop:justify-between laptop:gap-4"
   >
+    <!-- Texto principal -->
     <div class="laptop:w-[60%]">
-      <span class="font-medium laptop:px-8" data-aos="fade-in">¿Quién es?</span>
+      <span class="font-medium laptop:px-8 block text-gray-700">¿Quién es?</span
+      >
       <h2
-        class="font-bold text-xl mb-2 laptop:text-2xl laptop:px-8"
-        data-aos="fade-in"
+        id="about-me-title"
+        class="font-bold text-xl mb-2 laptop:text-2xl laptop:px-8 text-gray-900"
       >
         Alexis Chim
       </h2>
       <div
-        class="text-black text-lg tablet:text-xl laptop:text-2xl laptop:px-8"
-        data-aos="fade-in"
+        class="text-black text-base tablet:text-lg laptop:text-xl laptop:px-8 leading-relaxed"
       >
         <p>
           Cuento con formación en ingeniería en sistemas y soy orgullosamente
@@ -40,41 +47,49 @@ import { Icon } from "astro-icon/components";
           creativo para lograr sitios web rápidos, accesibles y con estilo.
         </p>
         <p>
-          Para mí, cada proyecto es la chance de hacer algo útil, humano y que
-          deje huella.
+          Para mí, cada proyecto es la oportunidad de hacer algo útil, humano y
+          que deje huella.
         </p>
       </div>
     </div>
 
-    <div class="mt-6 laptop:mt-0 overflow-hidden laptop:h-80 laptop:w-[50%]">
+    <!-- Imagen secundaria -->
+    <div
+      class="mt-6 laptop:mt-0 overflow-hidden laptop:h-80 laptop:w-[50%] rounded-xl"
+    >
       <Image
         src={LaptopAboutMe}
-        alt="img-about-me"
-        class="rounded-xl my-6 w-full h-full object-cover object-center laptop:my-0"
-        data-aos="fade-in"
+        alt="Laptop mostrando diseño web moderno"
+        width={800}
+        height={600}
+        class="rounded-xl w-full h-full object-cover object-center"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </header>
+
+  <!-- Sección de datos -->
   <section
     class="laptop:grid laptop:grid-cols-3 border-t border-gray-200 laptop:mt-6"
   >
     {
       aboutMeData.map((item, index) => (
         <div
-          class={`mb-4 p-4 laptop:mb-0 laptop:p-8
-          ${index >= 3 ? "laptop:border-t laptop:border-gray-200" : ""}
-        `}
+          class="p-4 laptop:p-8 hover:cursor-pointer transition-transform duration-300"
+          class:list={{
+            "laptop:border-t laptop:border-gray-200": index >= 3,
+          }}
         >
-          <div
-            class="hover:cursor-pointer hover:scale-105 transition-transform duration-300"
-            data-aos="fade-in"
-          >
-            <header class="flex items-center  mb-2">
-              <Icon name={item.icon} class="h-8 w-8 mr-2 transition-colors" />
-              <h3 class="font-semibold">{item.title}</h3>
-            </header>
-            <p class="text-gray-700 text-sm">{item.description}</p>
-          </div>
+          <header class="flex items-center mb-2">
+            <Icon
+              name={item.icon}
+              class="h-8 w-8 mr-2 text-gray-800"
+              aria-hidden="true"
+            />
+            <h3 class="font-semibold text-gray-900">{item.title}</h3>
+          </header>
+          <p class="text-gray-700 text-sm leading-snug">{item.description}</p>
         </div>
       ))
     }
