@@ -64,9 +64,11 @@ import { Icon } from "astro-icon/components";
           class={`mb-4 p-4 laptop:mb-0 laptop:p-8
           ${index >= 3 ? "laptop:border-t laptop:border-gray-200" : ""}
         `}
-          data-aos="fade-up"
         >
-          <div class="hover:cursor-pointer hover:scale-105 transition-transform duration-300">
+          <div
+            class="hover:cursor-pointer hover:scale-105 transition-transform duration-300"
+            data-aos="fade-in"
+          >
             <header class="flex items-center  mb-2">
               <Icon name={item.icon} class="h-8 w-8 mr-2 transition-colors" />
               <h3 class="font-semibold">{item.title}</h3>
