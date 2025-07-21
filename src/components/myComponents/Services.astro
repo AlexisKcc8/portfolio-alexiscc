@@ -7,16 +7,20 @@ import ContainerCenter from "./ContainerCenter.astro";
 
 <section
   id="services"
+  aria-labelledby="services-title"
   class="flex justify-center items-center text-center bg-white"
 >
   <ContainerCenter>
-    <header class="flex flex-col items-center text-center">
+    <header class="flex flex-col items-center text-center mb-8">
       <div
-        class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none py-2 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-900"
+        class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 py-2 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm text-alx-900"
       >
         Potencio tu marca o negocio con.
       </div>
-      <h2 class="text-4xl font-bold mb-6 tablet:text-4xl laptop:text-5xl">
+      <h2
+        id="services-title"
+        class="text-4xl font-bold mt-4 tablet:text-4xl laptop:text-5xl"
+      >
         Soluciones digitales hechas para destacar
       </h2>
     </header>
@@ -26,18 +30,20 @@ import ContainerCenter from "./ContainerCenter.astro";
         myServices.map((service) => (
           <div
             class={twMerge(
-              "relative rounded-xl  col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] text-start tablet:max-h-[32rem] laptop:h-[30rem] ",
+              "relative rounded-xl col-span-12 flex flex-col overflow-hidden hover:cursor-pointer min-h-[25rem] max-h-[28rem] text-start tablet:max-h-[32rem] laptop:h-[30rem]",
               service.classCard
             )}
-            data-aos="fade-up"
-            data-aos-delay={service.delay}
           >
             <header class={twMerge("p-6 mb-2", service.classHeader)}>
-              <h3 class=" font-medium  mb-2 text-gray-700">
-                <span class="rounded-full bg-white p-2">{service.emoji}</span>{" "}
+              <h3 class="font-medium mb-2 text-gray-700 flex items-center gap-2">
+                <span class="rounded-full bg-white p-2" aria-hidden="true">
+                  {service.emoji}
+                </span>
                 {service.title}
               </h3>
-              <p class="text-xl font-medium  ">{service.description}</p>
+              <p class="text-xl font-medium text-gray-800">
+                {service.description}
+              </p>
             </header>
             <div
               class={twMerge(
@@ -47,7 +53,12 @@ import ContainerCenter from "./ContainerCenter.astro";
             >
               <Image
                 src={service.urlImg}
-                alt="image service"
+                alt={service.alt ?? `Imagen del servicio ${service.title}`}
+                width={800}
+                height={600}
+                format="webp"
+                loading="lazy"
+                decoding="async"
                 class={twMerge(
                   "w-full h-full object-cover object-center",
                   service.classImage
