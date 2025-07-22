@@ -3,6 +3,7 @@ import { myServices } from "@data/myServices";
 import { Image } from "astro:assets";
 import { twMerge } from "tailwind-merge";
 import ContainerCenter from "./ContainerCenter.astro";
+import MyTitle from "./MyTitle.astro";
 ---
 
 <section
@@ -17,12 +18,9 @@ import ContainerCenter from "./ContainerCenter.astro";
       >
         Potencio tu marca o negocio con.
       </div>
-      <h2
-        id="services-title"
-        class="text-3xl font-extrabold mt-3 tracking-tight tablet:text-4xl laptop:text-6xl"
-      >
+      <MyTitle idTitle="services-title">
         Soluciones digitales hechas para destacar
-      </h2>
+      </MyTitle>
     </header>
 
     <div class="grid grid-cols-12 gap-4">

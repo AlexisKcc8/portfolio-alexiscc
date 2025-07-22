@@ -3,21 +3,17 @@ import { Icon } from "astro-icon/components";
 import ContainerCenter from "./ContainerCenter.astro";
 import { myContact } from "@data/dataContact";
 import { twMerge } from "tailwind-merge";
+import MyTitle from "./MyTitle.astro";
 ---
 
 <section
   id="contacto"
   class="px-4 py-16 bg-gray-50 text-gray-900 flex justify-center items-center"
-  aria-labelledby="contacto-titulo"
+  aria-labelledby="contact-title"
 >
   <ContainerCenter class="laptop:max-w-4xl">
     <header class="mb-10 text-center px-2">
-      <h2
-        id="contacto-titulo"
-        class="text-4xl mt-3 tablet:text-4xl laptop:text-6xl font-extrabold mb-3 tracking-tight"
-      >
-        ¿Listo para conectar?
-      </h2>
+      <MyTitle idTitle="contact-title"> ¿Listo para conectar? </MyTitle>
       <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
         Elige tu canal favorito y empecemos a trabajar en algo que te emocione.
         ¡Estoy a un mensaje de distancia!

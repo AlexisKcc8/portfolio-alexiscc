@@ -8,6 +8,6 @@ interface Props extends HTMLAttributes<"section"> {}
 const { class: className } = Astro.props;
 ---
 
-<section class={twMerge("w-[90%] laptop:w-[80%]", className)}>
+<section class={twMerge("w-[85%] laptop:w-[80%]", className)}>
   <slot />
 </section>

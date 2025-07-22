@@ -2,6 +2,7 @@
 import { experience } from "@data/myExperience";
 import CardExperience from "./CardExperience.astro";
 import ContainerCenter from "./ContainerCenter.astro";
+import MyTitle from "./MyTitle.astro";
 ---
 
 <section
@@ -23,13 +24,9 @@ import ContainerCenter from "./ContainerCenter.astro";
         </div>
 
         <!-- Título principal -->
-
-        <h2
-          id="experiencia-title"
-          class="text-3xl font-extrabold mt-3 tracking-tight tablet:text-4xl laptop:text-6xl"
-        >
+        <MyTitle idTitle="experiencia-title">
           Experiencia digital con propósito
-        </h2>
+        </MyTitle>
       </header>
     </aside>
 

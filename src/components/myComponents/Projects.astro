@@ -1,6 +1,7 @@
 ---
 import { myProjects } from "@data/myProjects";
 import { MyCarousel } from "./MyCarousel.tsx";
+import MyTitle from "./MyTitle.astro";
 ---
 
 <section
@@ -14,12 +15,7 @@ import { MyCarousel } from "./MyCarousel.tsx";
     >
       Donde cada diseño cuenta una historia
     </p>
-    <h2
-      id="projects-title"
-      class="text-3xl font-extrabold mt-3 tracking-tight tablet:text-4xl laptop:text-6xl"
-    >
-      Zona de commits visuales
-    </h2>
+    <MyTitle idTitle="projects-title"> Zona de commits visuales </MyTitle>
   </header>
 
   <!-- Carrusel de proyectos -->
