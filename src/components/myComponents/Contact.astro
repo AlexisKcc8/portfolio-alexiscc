@@ -1,13 +1,58 @@
-<section class="px-6 py-12 text-center">
-  <h2 class="text-2xl font-bold mb-4">¿Listo para trabajar juntos?</h2>
-  <p class="mb-6 text-gray-600">
-    Cuéntame sobre tu proyecto o idea. Estoy listo para crear algo genial
-    contigo.
-  </p>
-  <a
-    href="https://wa.me/529991234567"
-    class="inline-block bg-green-500 text-white px-6 py-2 rounded-full shadow hover:bg-green-600"
-  >
-    💬 Escríbeme por WhatsApp
-  </a>
+---
+import { Icon } from "astro-icon/components";
+import ContainerCenter from "./ContainerCenter.astro";
+import { myContact } from "@data/dataContact";
+import { twMerge } from "tailwind-merge";
+---
+
+<section
+  id="contacto"
+  class="px-4 py-16 bg-gray-50 text-gray-900 flex justify-center items-center"
+  aria-labelledby="contacto-titulo"
+>
+  <ContainerCenter class="w-full max-w-5xl">
+    <header class="mb-10 text-center px-2">
+      <h2
+        id="contacto-titulo"
+        class="text-4xl mt-3 tablet:text-4xl laptop:text-5xl font-extrabold mb-3 tracking-tight"
+      >
+        ¿Listo para conectar?
+      </h2>
+      <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
+        Elige tu canal favorito y empecemos a trabajar en algo que te emocione.
+        ¡Estoy a un mensaje de distancia!
+      </p>
+    </header>
+
+    <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
+      <!-- Card genérica -->
+      {
+        myContact.map(({ href, bg, textColor, title, name, desc, icon }) => (
+          <a
+            href={href}
+            class="group flex items-center gap-3 p-4 sm:p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Contáctame por ${title}`}
+          >
+            <div class={`p-3 rounded-xl ${bg} transition-colors`}>
+              <Icon
+                name={icon}
+                class={twMerge("h-6 w-6", textColor)}
+                is:inline
+                aria-hidden="true"
+              />
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-semibold text-xs sm:text-sm text-gray-500">
+                {title}
+              </h3>
+              <h2 class="font-semibold text-lg sm:text-xl truncate">{name}</h2>
+              <p class="text-gray-500 text-xs sm:text-sm">{desc}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </ContainerCenter>
 </section>

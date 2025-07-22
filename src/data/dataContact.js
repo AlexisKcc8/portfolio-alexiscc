@@ -1,0 +1,38 @@
+export const myContact = [
+  {
+    href: "https://wa.me/529991234567?text=Hola%2C%20quiero%20hablar%20sobre%20un%20proyecto",
+    bg: "bg-green-100 group-hover:bg-green-200",
+    textColor: "text-[#25D366]",
+    title: "WhatsApp",
+    name: "+52 9971139895",
+    desc: "Rápido y directo, ¡respondo al instante!",
+    icon: "whatsapp",
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=61578281609381",
+    bg: "bg-blue-100 group-hover:bg-blue-200",
+    textColor: "text-[#0866FF]",
+    title: "Facebook",
+    name: "Alexis-KRCode",
+    desc: "Sígueme y envíame un mensaje.",
+    icon: "facebook",
+  },
+  {
+    href: "https://linkedin.com/in/kleyver-alexis-chim-chay-47172526a",
+    bg: "bg-blue-50 group-hover:bg-blue-100",
+    textColor: "text-blue-700",
+    title: "LinkedIn",
+    name: "Kleyver Alexis Chim Chay",
+    desc: "Conectemos y creemos nuevas oportunidades.",
+    icon: "LinkedIn",
+  },
+  {
+    href: "mailto:alexiscode349@gmail.com",
+    bg: "bg-gray-100 group-hover:bg-gray-200",
+    textColor: "text-gray-700",
+    title: "Email",
+    name: "alexiscode349@gmail.com",
+    desc: "Para detalles más formales, ¡escríbeme!",
+    icon: "email",
+  },
+];

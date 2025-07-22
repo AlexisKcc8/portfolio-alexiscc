@@ -55,6 +55,10 @@ body {
   font-variation-settings: "slnt" 0;
 }
 
+section[id] {
+  scroll-margin-top: 3rem;
+}
+
 /* ——— Animación marquee ——— */
 @keyframes scrollX {
   0% {
@@ -207,6 +211,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

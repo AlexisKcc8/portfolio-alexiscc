@@ -3,20 +3,29 @@ import { myProjects } from "@data/myProjects";
 import { MyCarousel } from "./MyCarousel.tsx";
 ---
 
-<section id="projects" class="snap-start">
-  <header class="px-4 mx-auto text-center max-w-[90%] laptop:max-w-[85%]">
-    <div
-      class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none py-2 px-3 rounded-full uppercase overflow-hidden gap-2 sm:px-4 text-xs sm:text-sm transition-all duration-300 text-alx-900"
-      data-aos="fade-down"
+<section
+  id="projects"
+  class="snap-start py-12 px-4 sm:px-6 lg:px-8 bg-white"
+  aria-labelledby="projects-title"
+>
+  <header class="mx-auto text-center max-w-3xl mb-6">
+    <p
+      class="bg-alx-100 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap py-2 px-3 rounded-full uppercase text-alx-900 text-xs sm:text-sm transition-colors duration-300"
     >
       Donde cada diseño cuenta una historia
-    </div>
+    </p>
     <h2
-      class="text-4xl font-bold mb-6 tablet:text-4xl laptop:text-5xl"
-      data-aos="fade-in"
+      id="projects-title"
+      class="text-4xl mt-3 tablet:text-4xl laptop:text-5xl font-extrabold mb-3 tracking-tight"
     >
       Zona de commits visuales
     </h2>
   </header>
-  <MyCarousel client:load elements={myProjects} />
+
+  <!-- Carrusel de proyectos -->
+  <MyCarousel
+    client:load
+    elements={myProjects}
+    aria-label="Carrusel con proyectos destacados"
+  />
 </section>
