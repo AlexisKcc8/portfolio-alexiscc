@@ -3,10 +3,10 @@ const { exp, numberProject } = Astro.props;
 ---
 
 <article
-  class="tablet:sticky tablet:top-4 snap-center bg-gradient-to-tr from-alx-50 to-alx-100 rounded-2xl px-6 py-8 mx-auto overflow-hidden flex flex-col tablet:flex-row tablet:items-center tablet:text-start gap-6 snap-always mt-4"
+  class="snap-center bg-gradient-to-tr from-alx-50 to-alx-100 rounded-2xl px-6 py-8 mx-auto overflow-hidden flex flex-col tablet:sticky tablet:top-4 tablet:flex-row tablet:items-center tablet:text-start gap-6 snap-always"
   class:list={{
     "tablet:mt-0": numberProject === 1,
-    "mt-8 tablet:mt-24 laptop:mt-36": numberProject > 1,
+    "mt-8 tablet:mt-18 laptop:mt-20": numberProject > 1,
   }}
   tabindex="0"
 >
@@ -59,18 +59,18 @@ const { exp, numberProject } = Astro.props;
       />
     </header>
 
-    <h3 class="text-2xl font-medium text-gray-900 mb-2 leading-snug">
+    <h3 class="text-xl mt-2 font-medium text-gray-900 mb-2 leading-snug">
       {exp.title}
     </h3>
 
-    <p class="text-gray-900 leading-snug">{exp.description}</p>
+    <p class="text-gray-900 text-sm leading-snug">{exp.description}</p>
 
     <!-- Lista de logros -->
     {
       Array.isArray(exp.steps) && exp.steps.length > 0 && (
         <ul class="mt-4 list-disc list-inside text-gray-800 space-y-1">
           {exp.steps.map((step: string) => (
-            <li>{step}</li>
+            <li class="text-sm">{step}</li>
           ))}
         </ul>
       )

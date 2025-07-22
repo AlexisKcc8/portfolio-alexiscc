@@ -1,6 +1,6 @@
 export const myContact = [
   {
-    href: "https://wa.me/529991234567?text=Hola%2C%20quiero%20hablar%20sobre%20un%20proyecto",
+    href: "https://wa.me/529971139895?text=Hola%2C%20quiero%20hablar%20sobre%20un%20proyecto",
     bg: "bg-green-100 group-hover:bg-green-200",
     textColor: "text-[#25D366]",
     title: "WhatsApp",
