@@ -1,6 +1,8 @@
 ---
+import { myContact } from "@data/dataContact";
 import { Icon } from "astro-icon/components";
-const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
+import { twMerge } from "tailwind-merge";
+const iconTools = ["facebook", "LinkedIn", "whatsapp", "email"];
 ---
 
 <section
@@ -111,13 +113,23 @@ const iconTools = ["astro", "react", "javascript", "typescript", "tailwindcss"];
   <!-- Footer con iconos -->
   <footer class="my-7 flex justify-center items-center gap-4">
     {
-      iconTools.map((icon) => (
-        <Icon
-          name={icon}
-          class="w-8 h-8"
-          is:inline
-          aria-label={`Tecnología: ${icon}`}
-        />
+      myContact.map(({ href, bg, textColor, title, name, desc, icon }) => (
+        <a
+          href={href}
+          class="group flex items-center transition-all duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Contáctame por ${title}`}
+        >
+          <div class={`p-3 rounded-xl ${bg} transition-colors`}>
+            <Icon
+              name={icon}
+              class={twMerge("h-6 w-6", textColor)}
+              is:inline
+              aria-hidden="true"
+            />
+          </div>
+        </a>
       ))
     }
   </footer>

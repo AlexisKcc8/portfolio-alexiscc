@@ -3,91 +3,50 @@ import { Image } from "astro:assets";
 import facebookPreview from "@assets/face_promotion.webp";
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
+import ContainerCenter from "./ContainerCenter.astro";
 ---
 
 <section
-  class="relative w-full px-6 py-12 bg-gradient-to-r from-alx-100 via-white to-alx-50 overflow-hidden"
+  class="relative w-full flex justify-center items-center bg-white overflow-hidden"
   aria-labelledby="facebook-heading"
 >
-  <!-- Decoración SVG -->
-  <svg
-    class="absolute top-0 left-0 w-72 opacity-20 -translate-x-20 -translate-y-20"
-    viewBox="0 0 400 400"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <circle cx="200" cy="200" r="200" fill="#C4B5FD"></circle>
-  </svg>
-  <svg
-    class="absolute bottom-0 right-0 w-72 opacity-20 translate-x-40 translate-y-20"
-    viewBox="0 0 400 400"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <circle cx="200" cy="200" r="200" fill="#C4B5FD"></circle>
-  </svg>
-
-  <div
-    class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12"
-  >
-    <!-- Texto -->
-    <div class="flex-1 text-center md:text-left space-y-6">
-      <!-- Badge -->
+  <ContainerCenter class="flex flex-col items-center justify-center">
+    <header class="text-center">
       <span
-        data-slot="badge"
-        class="inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 [&>svg]:pointer-events-none gap-2 py-2 px-3 sm:px-4 text-xs sm:text-sm rounded-full shadow-lg backdrop-blur-md transition-all duration-300 border bg-white/80 border-gray-200/50 text-gray-900 hover:bg-white/90"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700 shadow-sm hover:bg-gray-100 transition"
       >
-        <div class="relative flex h-2 w-2">
+        <span class="relative flex h-2 w-2">
           <span
             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
           ></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
           ></span>
-        </div>
-        <span class="font-medium">Sígueme en</span>
-        <Icon name="icon-arrow" />
+        </span>
+        Sígueme en <Icon name="icon-arrow" aria-hidden="true" />
       </span>
 
-      <!-- Título principal -->
       <h2
         id="facebook-heading"
-        class="text-4xl font-extrabold text-gray-900 leading-tight"
+        class="text-4xl font-bold text-gray-900 leading-tight"
       >
         Facebook: 👨‍💻Alexis-KRCode<br />
         <span class="text-alx-600">Desarrollo Web & Diseño Elegante</span>
       </h2>
 
-      <!-- Descripción -->
-      <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
-        Entra a un espacio donde el código se convierte en diseño. Tips, ideas y
+      <!-- <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
+        Entra a un espacio donde el código se convierte en diseño: tips, ideas y
         proyectos reales contados desde la perspectiva de un frontend developer.
       </p>
+
       <LinkButton
         url="https://www.facebook.com/profile.php?id=61578281609381"
-        className="inline-flex text-xl justify-center items-center flex-shrink-1 gap-2 px-4 py-2 bg-alx-600 text-white rounded-lg font-semibold hover:bg-alx-700 transition tablet:max-w-11/12"
+        className="inline-flex items-center gap-2 px-5 py-3 bg-alx-700 text-white rounded-lg font-semibold hover:bg-alx-700 transition"
         title="Seguir a Alexis-KRCode"
-        ,
-        subtitle="vamos, vamos!"
-        ,
+        subtitle="¡Vamos, vamos!"
         nameIcon="icon-face"
-        ,
-        containerIconClass="bg-alx-50"
-        classIcon="text-alx-900"
-      />
-    </div>
-
-    <!-- Imagen optimizada -->
-    <div class="flex-1 max-w-sm mx-auto md:mx-0">
-      <Image
-        src={facebookPreview}
-        alt="Vista previa de la página de Facebook de Alexis-KRCode con diseño elegante"
-        class="shadow-alx-200 shadow-2xl rounded-xl"
-        loading="lazy"
-        decoding="async"
-        data-aos="fade-up"
-      />
-    </div>
-  </div>
+        containerIconClass="bg-indigo-100"
+        classIcon="text-indigo-900"
+      /> -->
+    </header>
+  </ContainerCenter>
 </section>

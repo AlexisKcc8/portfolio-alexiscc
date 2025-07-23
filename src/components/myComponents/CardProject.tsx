@@ -10,7 +10,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
         flex-shrink-0
         snap-center
         w-[75vw]
-        sm:w-[33.33vw]
+        sm:w-[34vw]
         cursor-pointer
         will-change-transform
         tablet:w-[26rem]
@@ -23,7 +23,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
         className="
           relative
           w-full
-          bg-alx-50
+          bg-alx-100
           rounded-2xl
           pt-4
           px-4
@@ -43,7 +43,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
 
       <div className="flex flex-col  h-full text-center tablet:text-center px-2">
         <div className="flex flex-col ">
-          <h5 className="font-bold text-gray-800 text-2xl mb-1">
+          <h5 className="font-bold text-gray-800 text-2xl mb-3">
             {nameProject}
           </h5>
           <p className="text-gray-500 text-sm ">{description}</p>
@@ -54,18 +54,22 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
             href={urlLive}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3  font-medium rounded-xl border border-gray-300 text-white bg-alx-500 hover:bg-alx-600 transition-colors duration-200"
+            className="flex items-center gap-2 px-4 py-2 font-semibold rounded-xl text-white bg-alx-800 hover:bg-alx-600 transition-colors duration-200"
           >
-            <img src="/icons/live.svg" alt="" className="w-4 h-4" />
+            <div className="p-2 rounded-lg bg-alx-400">
+              <img src="/icons/live.svg" alt="" className="w-6 h-6" />
+            </div>
             Live
           </a>
           <a
             href={urlRepo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 font-medium rounded-xl border border-gray-300 text-gray-700 hover:bg-alx-100 transition-colors duration-200"
+            className="flex items-center gap-2 px-4 py-2 font-semibold  rounded-xl bg-alx-200  text-gray-700 hover:bg-alx-100 transition-colors duration-200"
           >
-            <img src="/icons/github.svg" alt="" className="w-4 h-4" />
+            <div className="p-2 rounded-lg bg-alx-100">
+              <img src="/icons/github.svg" alt="" className="w-6 h-6" />
+            </div>
             Code
           </a>
         </footer>
