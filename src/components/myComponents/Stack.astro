@@ -2,37 +2,100 @@
 import { Icon } from "astro-icon/components";
 import ContainerCenter from "./ContainerCenter.astro";
 import MyTitle from "./MyTitle.astro";
+import { twMerge } from "tailwind-merge";
+import { Image } from "astro:assets";
+import developer from "@assets/Developer-stack.svg";
+
+const iconStack = [
+  { name: "astro", className: "text-[#FF5A03]" },
+  { name: "react", className: "text-[#61DAFB]" },
+  { name: "javascript", className: "text-[#F7DF1E]" },
+  { name: "typescript", className: "text-[#3178C6]" },
+  { name: "tailwindcss", className: "text-[#38B2AC]" },
+  { name: "node", className: "text-[#5FA04E]" },
+  { name: "reactrouter", className: "text-[#CA4245]" },
+  { name: "vite", className: "text-[#646CFF]" },
+  { name: "mysql", className: "text-[#4479A1]" },
+  { name: "firebase", className: "text-[#DD2C00]" },
+  { name: "github", className: "text-[#181717]" },
+  { name: "git", className: "text-[#F05032]" },
+];
 ---
 
 <section
-  class="relative flex flex-col justify-center items-center text-center bg-gradient-radial from-white via-purple-50 to-purple-200"
+  id="stack"
   aria-labelledby="my-stack-title"
+  class="relative my-8 flex flex-col items-center justify-center bg-gradient-radial from-white via-purple-50 to-purple-200"
 >
-  <ContainerCenter>
-    <aside class="text-start">
-      <header class="mb-6 flex flex-col items-start justify-start">
+  <ContainerCenter
+    class="laptop:flex laptop:items-center laptop:justify-center"
+  >
+    <aside class="text-start laptop:w-1/2 laptop:pr-8">
+      <header>
         <MyTitle idTitle="my-stack-title">
-          <!-- Encuentra lo que sea con una sola búsqueda. -->
           Tu visión, mi caja de herramientas
         </MyTitle>
-        <p class="my-3 text-black text-sm">
+        <p
+          class="my-3 text-black text-sm laptop:text-base laptop:leading-relaxed laptop:max-w-3/4"
+        >
           Domina tu proyecto con la tecnología adecuada. Un stack moderno,
           optimizado y diseñado para dar vida a tus ideas.
         </p>
+
         <a
           href="#projects"
-          class="flex items-center gap-3 p-3 rounded-xl shadow-lg backdrop-blur-md border w-full sm:w-auto bg-alx-700 border-gray-200/30 hover:bg-alx-500 focus:outline-none focus:ring-2 focus:ring-violet-400 max-w-[60%]"
+          aria-label="Explora la zona de commits"
+          class="group mt-4 flex w-full max-w-[60%] items-center gap-3 rounded-xl border border-gray-200/30 bg-alx-700 p-3 shadow-lg backdrop-blur-md transition-colors hover:bg-alx-500 focus:outline-none focus:ring-2 focus:ring-violet-400 sm:w-auto laptop:max-w-1/2"
         >
-          <div class="p-2 rounded-lg bg-violet-100">
+          <div class="rounded-lg bg-violet-100 p-2">
             <Icon name="exercism" class="h-6 w-6 text-violet-600" is:inline />
           </div>
           <div class="text-left">
-            <h3 class="font-semibold text-sm text-white">Zona de commits</h3>
-            <p class="text-xs text-gray-200">Listas para explorar</p>
+            <h3 class="text-sm font-semibold text-white laptop:text-base">
+              Zona de commits
+            </h3>
+            <p class="text-xs text-gray-200 laptop:text-sm">
+              Listas para explorar
+            </p>
           </div>
         </a>
+
+        <section
+          class="my-8 grid grid-cols-3 gap-x-5 gap-y-3 laptop:gap-x-10"
+          aria-label="Tecnologías que utilizo"
+        >
+          {
+            iconStack.map(({ name, className }) => (
+              <div class="flex items-center gap-1">
+                <Icon
+                  name={name}
+                  class={twMerge("w-4 h-4 laptop:w-6 laptop:h-6", className)}
+                  is:inline
+                  aria-hidden="true"
+                />
+                <span class="text-sm font-medium text-gray-600 capitalize">
+                  {name}
+                </span>
+              </div>
+            ))
+          }
+        </section>
       </header>
     </aside>
-    <aside>image</aside>
+
+    <aside
+      class="overflow-hidden rounded-2xl bg-alx-100 p-4 laptop:w-1/2 laptop:pl-8"
+    >
+      <Image
+        src={developer}
+        alt="Ilustración de un desarrollador trabajando con su stack tecnológico"
+        width={800}
+        height={600}
+        format="webp"
+        loading="lazy"
+        decoding="async"
+        class="h-auto w-full object-cover object-center"
+      />
+    </aside>
   </ContainerCenter>
 </section>

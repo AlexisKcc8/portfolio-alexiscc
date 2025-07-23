@@ -41,20 +41,20 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
         />
       </picture>
 
-      <div className="flex flex-col  h-full text-center tablet:text-left px-4">
+      <div className="flex flex-col  h-full text-center tablet:text-center px-2">
         <div className="flex flex-col ">
-          <h5 className="font-bold text-gray-800 text-3xl mb-1">
+          <h5 className="font-bold text-gray-800 text-2xl mb-1">
             {nameProject}
           </h5>
-          <p className="text-gray-500 prose-sm ">{description}</p>
+          <p className="text-gray-500 text-sm ">{description}</p>
         </div>
 
-        <footer className="flex justify-center tablet:justify-start items-center gap-3 mt-auto pt-4">
+        <footer className="flex justify-center items-center gap-3 mt-auto pt-4">
           <a
             href={urlLive}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3  font-medium rounded-full border border-gray-300 text-white bg-alx-500 hover:bg-alx-600 transition-colors duration-200"
+            className="flex items-center gap-2 px-6 py-3  font-medium rounded-xl border border-gray-300 text-white bg-alx-500 hover:bg-alx-600 transition-colors duration-200"
           >
             <img src="/icons/live.svg" alt="" className="w-4 h-4" />
             Live
@@ -63,7 +63,7 @@ export const CardProject: React.FC<CardProjectProps> = ({ project }) => {
             href={urlRepo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 font-medium rounded-full border border-gray-300 text-gray-700 hover:bg-alx-100 transition-colors duration-200"
+            className="flex items-center gap-2 px-6 py-3 font-medium rounded-xl border border-gray-300 text-gray-700 hover:bg-alx-100 transition-colors duration-200"
           >
             <img src="/icons/github.svg" alt="" className="w-4 h-4" />
             Code
