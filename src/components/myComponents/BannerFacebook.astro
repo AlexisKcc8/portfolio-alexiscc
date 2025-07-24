@@ -1,52 +1,131 @@
 ---
 import { Image } from "astro:assets";
-import facebookPreview from "@assets/face_promotion.webp";
+import facebookPreview from "@assets/my-promotion-face.webp";
+import landscape from "@assets/my-landscape-face.webp";
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
 import ContainerCenter from "./ContainerCenter.astro";
 ---
 
 <section
-  class="relative w-full flex justify-center items-center bg-white overflow-hidden"
+  class="w-full flex flex-col items-center overflow-hidden py-8"
   aria-labelledby="facebook-heading"
 >
-  <ContainerCenter class="flex flex-col items-center justify-center">
-    <header class="text-center">
-      <span
+  <ContainerCenter
+    class="relative flex flex-col items-center justify-center w-full laptop:rounded-2xl laptop:overflow-hidden laptop:w-[85%]"
+  >
+    <!-- Fondo decorativo -->
+    <Image
+      src={landscape}
+      alt=""
+      format="webp"
+      loading="lazy"
+      decoding="async"
+      aria-hidden="true"
+      class="absolute inset-0 h-[80vh] w-full object-cover object-center z-0 laptop:rounded-2xl laptop:h-[100vh]"
+    />
+
+    <header
+      class="relative z-10 flex flex-col items-center justify-center pt-16 text-center max-w-[90%] laptop:max-w-[80%] mx-auto"
+    >
+      <div
         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700 shadow-sm hover:bg-gray-100 transition"
       >
-        <span class="relative flex h-2 w-2">
+        <span class="relative flex h-2 w-2" aria-hidden="true">
           <span
             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
           ></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
           ></span>
         </span>
-        Sígueme en <Icon name="icon-arrow" aria-hidden="true" />
-      </span>
+        <span>Sígueme en Facebook</span>
+        <Icon name="icon-arrow" aria-hidden="true" />
+      </div>
 
       <h2
         id="facebook-heading"
-        class="text-4xl font-bold text-gray-900 leading-tight"
+        class="mt-3 text-5xl font-extrabold tracking-tight text-black leading-tight laptop:text-6xl laptop:leading-tight"
       >
-        Facebook: 👨‍💻Alexis-KRCode<br />
-        <span class="text-alx-600">Desarrollo Web & Diseño Elegante</span>
+        Alexis-KRCode<br />
+        <span class="text-white">Desarrollo & Diseño Elegante</span>
       </h2>
 
-      <!-- <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
-        Entra a un espacio donde el código se convierte en diseño: tips, ideas y
-        proyectos reales contados desde la perspectiva de un frontend developer.
-      </p>
+      <figure class="h-[80vh] laptop:h-[110vh] mt-6">
+        <Image
+          src={facebookPreview}
+          alt="Alexis-KRCode desarrollando soluciones digitales modernas"
+          format="webp"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover object-center"
+          width={1280}
+          height={720}
+        />
+      </figure>
 
-      <LinkButton
-        url="https://www.facebook.com/profile.php?id=61578281609381"
-        className="inline-flex items-center gap-2 px-5 py-3 bg-alx-700 text-white rounded-lg font-semibold hover:bg-alx-700 transition"
-        title="Seguir a Alexis-KRCode"
-        subtitle="¡Vamos, vamos!"
-        nameIcon="icon-face"
-        containerIconClass="bg-indigo-100"
-        classIcon="text-indigo-900"
-      /> -->
+      <p
+        class="my-4 text-lg text-gray-500 font-semibold mt-3 tracking-tight laptop:text-2xl laptop:max-w-[80%]"
+      >
+        Conecta con un espacio donde el diseño digital y la programación se
+        fusionan para crear soluciones web que <span class="text-black"
+          >cautivaran a tu audiencia</span
+        > y potenciaran tu <span class="text-black">crecimiento en línea</span>.
+        Descubrirás cómo la tecnología puede convertirse en tu mejor aliada para
+        destacar, crecer y <span class="text-black"
+          >dejar huella en el mundo digital.</span
+        >
+      </p>
     </header>
+
+    <LinkButton
+      url="https://www.facebook.com/profile.php?id=61578281609381"
+      className="inline-flex items-center gap-2 px-4 py-2 my-8 bg-alx-700 text-white rounded-lg font-semibold hover:bg-alx-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-alx-700 transition"
+      title="Seguir a Alexis-KRCode"
+      subtitle="¡Vamos, vamos!"
+      nameIcon="icon-face"
+      containerIconClass="bg-indigo-100"
+      classIcon="text-indigo-900"
+    />
+
+    <section
+      aria-label="Beneficios de seguir a Alexis-KRCode en Facebook"
+      class="w-11/12 grid grid-cols-2 gap-8 tablet:grid-cols-4 tablet:w-full"
+    >
+      {
+        [
+          {
+            icon: "news-dev",
+            title: "Novedades constantes",
+            desc: "Mantente al día con las últimas tendencias en desarrollo web.",
+          },
+          {
+            icon: "learn-dev",
+            title: "Aprende a diario sin límites",
+            desc: "Descubre recursos exclusivos para potenciar tus habilidades.",
+          },
+          {
+            icon: "community",
+            title: "Comunidad inclusiva",
+            desc: "Conéctate con profesionales y comparte tu pasión por la tecnología.",
+          },
+          {
+            icon: "Inspiration",
+            title: "Inspiración real cada dia",
+            desc: "Historias y experiencias auténticas de un desarrollador frontend.",
+          },
+        ].map((card) => (
+          <article class="flex flex-col items-center text-center rounded-xl transition focus-within:ring-2 focus-within:ring-alx-700">
+            <div
+              class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-alx-200"
+              aria-hidden="true"
+            >
+              <Icon name={card.icon} class="w-8 h-8 text-alx-800" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900">{card.title}</h3>
+            <p class="mt-1 text-sm text-gray-600">{card.desc}</p>
+          </article>
+        ))
+      }
+    </section>
   </ContainerCenter>
 </section>
