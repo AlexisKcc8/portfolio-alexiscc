@@ -3,7 +3,7 @@ export const myProjects = [
     urlImg: "/projects/LandingPage-FotoGaby.webp",
     nameProject: "Landing page Foto y Video Gaby",
     description:
-      "Desarrollada con React, TypeScript, Sass, Flexbox y Bootstrap. Enfoque Mobile-First y estructura semántica con HTML5.",
+      "Construido con Astro 5 y React 19. Utilicé Tailwind CSS 4 para un diseño mobile-first, y AOS para animaciones sutiles que aportan dinamismo sin sacrificar velocidad.",
     urlRepo: "https://github.com/AlexisKcc8/proyecto-foto-y-video-gaby.git",
     urlLive: "https://foto-y-video-gaby.netlify.app/",
   },
@@ -11,7 +11,7 @@ export const myProjects = [
     urlImg: "/projects/LandingPage-Servitec-Halacho.webp",
     nameProject: "Landing page Servitec Halachó",
     description:
-      "Chat en tiempo real con React, Context API y Firebase. Autenticación integrada, mensajes instantáneos y estilos personalizados con Sass.",
+      "Desarrollada con Astro 5 y React 19. La interfaz, creada con Tailwind CSS 4, por animaciones AOS y astro-icon junto a  tailwind-merge para mantener un código limpio y fácil de escalar.",
     urlRepo: "https://github.com/AlexisKcc8/proyecto-servitec.git",
     urlLive: "https://servitec-halacho.netlify.app/",
   },
