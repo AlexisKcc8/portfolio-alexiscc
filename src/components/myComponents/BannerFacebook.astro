@@ -5,6 +5,29 @@ import landscape from "@assets/my-landscape-face.webp";
 import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
 import ContainerCenter from "./ContainerCenter.astro";
+
+const benefits = [
+  {
+    icon: "news-dev",
+    title: "Novedades constantes",
+    desc: "Mantente al día con las últimas tendencias en desarrollo web.",
+  },
+  {
+    icon: "learn-dev",
+    title: "Aprende a diario sin límites",
+    desc: "Descubre recursos exclusivos para potenciar tus habilidades.",
+  },
+  {
+    icon: "community",
+    title: "Comunidad inclusiva",
+    desc: "Conéctate con profesionales y comparte tu pasión por la tecnología.",
+  },
+  {
+    icon: "Inspiration",
+    title: "Inspiración real cada día",
+    desc: "Historias y experiencias auténticas de un desarrollador frontend.",
+  },
+];
 ---
 
 <section
@@ -17,12 +40,14 @@ import ContainerCenter from "./ContainerCenter.astro";
     <!-- Fondo decorativo -->
     <Image
       src={landscape}
-      alt=""
+      alt="Fondo decorativo con paisaje tecnológico"
       format="webp"
       loading="lazy"
       decoding="async"
-      aria-hidden="true"
       class="absolute inset-0 h-[80vh] w-full object-cover object-center z-0 laptop:rounded-2xl laptop:h-[100vh]"
+      width={1920}
+      height={1080}
+      aria-hidden="true"
     />
 
     <header
@@ -30,6 +55,7 @@ import ContainerCenter from "./ContainerCenter.astro";
     >
       <div
         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700 shadow-sm hover:bg-gray-100 transition"
+        role="note"
       >
         <span class="relative flex h-2 w-2" aria-hidden="true">
           <span
@@ -53,7 +79,7 @@ import ContainerCenter from "./ContainerCenter.astro";
       <figure class="h-[80vh] laptop:h-[110vh] mt-6">
         <Image
           src={facebookPreview}
-          alt="Alexis-KRCode desarrollando soluciones digitales modernas"
+          alt="Alexis-KRCode trabajando en soluciones digitales modernas"
           format="webp"
           loading="lazy"
           decoding="async"
@@ -61,16 +87,20 @@ import ContainerCenter from "./ContainerCenter.astro";
           width={1280}
           height={720}
         />
+        <figcaption class="sr-only">
+          Conoce el trabajo creativo de Alexis-KRCode en diseño y desarrollo
+          digital.
+        </figcaption>
       </figure>
 
       <p
         class="my-4 text-lg text-gray-500 font-semibold mt-3 tracking-tight laptop:text-2xl laptop:max-w-[80%]"
       >
         Conecta con un espacio donde el diseño digital y la programación se
-        fusionan para crear soluciones web que <span class="text-black"
-          >cautivaran a tu audiencia</span
-        > y potenciaran tu <span class="text-black">crecimiento en línea</span>.
-        Descubrirás cómo la tecnología puede convertirse en tu mejor aliada para
+        fusionan para crear soluciones web que
+        <span class="text-black">cautivarán a tu audiencia</span>
+        y potenciarán tu <span class="text-black">crecimiento en línea</span>.
+        Descubre cómo la tecnología puede convertirse en tu mejor aliada para
         destacar, crecer y <span class="text-black"
           >dejar huella en el mundo digital.</span
         >
@@ -92,29 +122,11 @@ import ContainerCenter from "./ContainerCenter.astro";
       class="w-11/12 grid grid-cols-2 gap-8 tablet:grid-cols-4 tablet:w-full"
     >
       {
-        [
-          {
-            icon: "news-dev",
-            title: "Novedades constantes",
-            desc: "Mantente al día con las últimas tendencias en desarrollo web.",
-          },
-          {
-            icon: "learn-dev",
-            title: "Aprende a diario sin límites",
-            desc: "Descubre recursos exclusivos para potenciar tus habilidades.",
-          },
-          {
-            icon: "community",
-            title: "Comunidad inclusiva",
-            desc: "Conéctate con profesionales y comparte tu pasión por la tecnología.",
-          },
-          {
-            icon: "Inspiration",
-            title: "Inspiración real cada dia",
-            desc: "Historias y experiencias auténticas de un desarrollador frontend.",
-          },
-        ].map((card) => (
-          <article class="flex flex-col items-center text-center rounded-xl transition focus-within:ring-2 focus-within:ring-alx-700">
+        benefits.map((card) => (
+          <article
+            class="flex flex-col items-center text-center rounded-xl transition focus-within:ring-2 focus-within:ring-alx-700"
+            tabindex="0"
+          >
             <div
               class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-alx-200"
               aria-hidden="true"
