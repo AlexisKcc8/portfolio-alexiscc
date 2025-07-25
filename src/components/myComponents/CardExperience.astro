@@ -1,19 +1,38 @@
 ---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
 const { exp, numberProject } = Astro.props;
 ---
 
 <article
-  class="snap-center bg-gradient-to-tr from-alx-50 to-alx-100 rounded-2xl px-6 py-8 mx-auto overflow-hidden flex flex-col tablet:sticky tablet:top-4 tablet:flex-row tablet:items-center tablet:text-start gap-6 snap-always"
+  class="relative snap-center bg-gradient-to-tr from-alx-50 to-alx-100 rounded-2xl px-6 py-8 mx-auto overflow-hidden flex flex-col tablet:sticky tablet:top-4 tablet:flex-row tablet:items-center tablet:text-start gap-6 snap-always focus-visible:ring-2 focus-visible:ring-alx-500"
   class:list={{
     "tablet:mt-0": numberProject === 1,
     "mt-8 tablet:mt-18 laptop:mt-20": numberProject > 1,
   }}
-  tabindex="0"
+  aria-labelledby={`project-title-${numberProject}`}
 >
+  <!-- Marca de agua decorativa -->
+  <figure
+    class="absolute bottom-0 left-0 w-80 h-80 opacity-5 pointer-events-none select-none"
+    aria-hidden="true"
+  >
+    <Image
+      src={exp.logo.src}
+      alt=""
+      class="w-full h-full object-contain grayscale"
+      loading="lazy"
+      decoding="async"
+      width={320}
+      height={320}
+    />
+  </figure>
+
   <!-- Número enumerado -->
   <div class="w-full flex justify-center items-center tablet:w-[20%]">
     <div
-      class="z-20 aspect-square bg-alx-200 border-2 border-alx-600 rounded-full flex-none flex justify-center items-center w-16 relative"
+      class="aspect-square bg-alx-200 border-2 border-alx-600 rounded-full flex-none flex justify-center items-center w-16 relative"
     >
       <span class="font-poppins text-[1.75rem] font-bold">
         {numberProject}
@@ -21,14 +40,12 @@ const { exp, numberProject } = Astro.props;
 
       <!-- Líneas decorativas -->
       <div
-        class="bg-alx-600 absolute w-[15rem] h-[2px] left-[115%]
-               tablet:w-[2px] tablet:h-[10rem] tablet:bottom-[115%] tablet:left-auto"
+        class="bg-alx-600 absolute w-[15rem] h-[2px] left-[115%] tablet:w-[2px] tablet:h-[10rem] tablet:bottom-[115%] tablet:left-auto"
         aria-hidden="true"
       >
       </div>
       <div
-        class="bg-alx-600 absolute w-[15rem] h-[2px] right-[115%]
-               tablet:w-[2px] tablet:h-[10rem] tablet:top-[115%] tablet:right-auto"
+        class="bg-alx-600 absolute w-[15rem] h-[2px] right-[115%] tablet:w-[2px] tablet:h-[10rem] tablet:top-[115%] tablet:right-auto"
         aria-hidden="true"
       >
       </div>
@@ -41,39 +58,45 @@ const { exp, numberProject } = Astro.props;
   >
     <!-- Badge -->
     <header
-      data-slot="badge"
-      class="bg-alx-200 inline-flex items-center justify-center font-medium w-fit
-             whitespace-nowrap shrink-0 py-1 px-3 rounded-full uppercase gap-2 sm:px-4
-             text-xs sm:text-sm text-alx-500"
+      class="bg-alx-200 inline-flex items-center justify-center font-medium w-fit whitespace-nowrap shrink-0 py-1 px-3 rounded-full uppercase gap-2 sm:px-4 text-xs sm:text-sm text-alx-500"
     >
       <span class="relative flex h-2 w-2" aria-hidden="true">
         <span class="relative inline-flex rounded-full h-2 w-2 bg-alx-500"
         ></span>
       </span>
       <span class="font-medium">{exp.role}</span>
-      <img
-        src="/icons/lightning.svg"
-        alt="Icono representando energía y dinamismo"
-        class="h-3 w-3"
-        loading="lazy"
+      <Icon
+        name="lightning"
+        class="h-3 w-3 text-gray-800"
+        is:inline
+        aria-hidden="true"
       />
     </header>
 
-    <h3 class="text-xl mt-2 font-medium text-gray-900 mb-2 leading-snug">
+    <h3
+      id={`project-title-${numberProject}`}
+      class="text-xl mt-2 font-medium text-gray-900 mb-2 leading-snug laptop:text-2xl"
+    >
       {exp.title}
     </h3>
 
     <p class="text-gray-900 text-sm leading-snug">{exp.description}</p>
 
     <!-- Lista de logros -->
-    {
-      Array.isArray(exp.steps) && exp.steps.length > 0 && (
-        <ul class="mt-4 list-disc list-inside text-gray-800 space-y-1">
-          {exp.steps.map((step: string) => (
-            <li class="text-sm">{step}</li>
-          ))}
-        </ul>
-      )
-    }
+    <ul class="mt-4 list-none text-gray-800 space-y-1">
+      {
+        exp.steps.map((step: string, index: number) => (
+          <li class="flex items-start text-sm">
+            <Icon
+              name="lightning"
+              class="h-3 w-3 text-orange-500 mt-0.5 mr-2 flex-shrink-0"
+              is:inline
+              aria-hidden="true"
+            />
+            <span>{step}</span>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </article>
