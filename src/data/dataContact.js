@@ -6,7 +6,7 @@ export const myContact = [
     title: "WhatsApp",
     name: "+52 9971139895",
     desc: "Rápido y directo, ¡respondo al instante!",
-    iconHero: "src/icons/whatsapp.svg",
+    iconHero: "/icons/whatsapp.svg",
     icon: "whatsapp",
   },
   {
@@ -16,7 +16,7 @@ export const myContact = [
     title: "Facebook",
     name: "Alexis-KRCode",
     desc: "Sígueme y envíame un mensaje.",
-    iconHero: "src/icons/facebook.svg",
+    iconHero: "/icons/facebook.svg",
     icon: "facebook",
   },
   {
@@ -26,7 +26,7 @@ export const myContact = [
     title: "LinkedIn",
     name: "Kleyver Alexis Chim Chay",
     desc: "Conectemos y creemos nuevas oportunidades.",
-    iconHero: "src/icons/LinkedIn.svg",
+    iconHero: "/icons/LinkedIn.svg",
     icon: "LinkedIn",
   },
   {
@@ -36,7 +36,7 @@ export const myContact = [
     title: "Email",
     name: "alexiscode349@gmail.com",
     desc: "Para detalles más formales, ¡escríbeme!",
-    iconHero: "src/icons/email.svg",
+    iconHero: "/icons/email.svg",
     icon: "email",
   },
 ];
