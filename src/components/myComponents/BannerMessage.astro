@@ -1,17 +1,52 @@
+---
+
+---
+
 <section
-  class="px-8 py-16 sm:px-6 lg:px-8 text-center bg-white"
+  id="banner"
+  class="relative mb-12 px-6 py-24 sm:px-8 lg:px-12 text-center bg-gradient-to-b from-[#5B21B6] to-[#C4B5FD]"
   aria-labelledby="banner-quote"
 >
-  <figure class="max-w-2xl mx-auto">
+  <!-- Difuminado lateral izquierdo -->
+  <div
+    aria-hidden="true"
+    class="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white/40 to-transparent pointer-events-none"
+  >
+  </div>
+
+  <!-- Difuminado lateral derecho -->
+  <div
+    aria-hidden="true"
+    class="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white/40 to-transparent pointer-events-none"
+  >
+  </div>
+
+  <!-- Difuminado inferior -->
+  <div
+    aria-hidden="true"
+    class="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white/40 to-transparent pointer-events-none"
+  >
+  </div>
+
+  <!-- Nubes decorativas accesibles -->
+  <div aria-hidden="true" class="cloud cloud-1 top-[10%] left-[5%]"></div>
+  <div aria-hidden="true" class="cloud cloud-2 top-[15%] left-[15%]"></div>
+  <div aria-hidden="true" class="cloud cloud-3 top-[8%] left-[25%]"></div>
+
+  <div aria-hidden="true" class="cloud cloud-2 top-[12%] right-[5%]"></div>
+  <div aria-hidden="true" class="cloud cloud-1 top-[18%] right-[15%]"></div>
+  <div aria-hidden="true" class="cloud cloud-3 top-[6%] right-[25%]"></div>
+
+  <figure class="relative max-w-2xl mx-auto z-10">
     <blockquote>
       <p
         id="banner-quote"
-        class="text-2xl md:text-3xl font-semibold leading-relaxed text-gray-900 laptop:leading-snug laptop:text-4xl"
+        class="text-3xl sm:text-4xl font-bold leading-relaxed text-white drop-shadow-md"
       >
         “Tu próxima web, con la calidad que tu marca merece.”
       </p>
     </blockquote>
-    <figcaption class="mt-4 text-sm sm:text-base font-medium text-gray-600">
+    <figcaption class="mt-4 text-lg font-medium text-gray-100">
       Alexis🧢Chim
     </figcaption>
   </figure>
