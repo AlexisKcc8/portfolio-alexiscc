@@ -1,96 +1,44 @@
+---
+import ContainerCenter from "./ContainerCenter.astro";
+---
+
 <footer
-  class="w-full bg-white border-t border-gray-200 px-6 py-12 text-gray-700"
+  class="w-full bg-white border-t border-gray-200 px-6 py-10 flex justify-center items-center text-gray-700"
+  aria-labelledby="footer-heading"
 >
-  <div class="max-w-6xl mx-auto grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-    <!-- Columna 1: Marca -->
-    <div class="space-y-3">
-      <h2 class="text-xl font-bold text-gray-900">Alexis 🧢 Chim</h2>
-      <p class="text-sm leading-relaxed">
-        Creando experiencias digitales modernas con <span class="font-medium"
-          >Astro + Tailwind</span
-        >.
-      </p>
-      <p class="text-xs text-gray-500 mt-4">
-        © 2025 Alexis Chim · Hecho con 💻 y ☕
-      </p>
-      <p class="text-xs text-gray-400">
-        Ilustraciones cortesía de
-        <a
-          href="https://storyset.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline hover:text-blue-600">Storyset</a
-        >
-      </p>
-    </div>
+  <h2 id="footer-heading" class="sr-only">
+    Información del sitio y enlaces importantes
+  </h2>
 
-    <!-- Columna 2: Servicios -->
-    <div>
-      <h3 class="font-semibold text-gray-900 mb-3">Servicios</h3>
-      <ul class="space-y-2 text-sm">
-        <li>Diseño y desarrollo web</li>
-        <li>Landing Pages efectivas</li>
-        <li>Automatización y Smart Home</li>
-        <li>Mantenimiento y optimización</li>
-        <li>Invitaciones digitales personalizadas</li>
-      </ul>
-    </div>
+  <ContainerCenter class="flex flex-col items-center text-center gap-3">
+    <!-- Nombre con buena jerarquía y contraste -->
+    <p
+      class="text-xl font-bold text-gray-900 hover:text-violet-600 transition-colors"
+    >
+      Alexis 🧢 Chim
+    </p>
 
-    <!-- Columna 4: Redes sociales -->
-    <div>
-      <h3 class="font-semibold text-gray-900 mb-3">Conecta</h3>
-      <div class="flex gap-4">
-        <a
-          href="https://www.facebook.com/profile.php?id=61578281609381"
-          target="_blank"
-          aria-label="Facebook"
-          class="hover:text-blue-600"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-7h-2.54v-2.88h2.54v-2.2c0-2.5 1.48-3.88 3.76-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.25 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.88h-2.34v7C18.34 21.13 22 17 22 12z"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="https://linkedin.com/in/kleyver-alexis-chim-chay-47172526a"
-          target="_blank"
-          aria-label="LinkedIn"
-          class="hover:text-blue-700"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.45 20.45h-3.55v-5.3c0-1.27-.03-2.91-1.77-2.91-1.77 0-2.04 1.38-2.04 2.8v5.41h-3.55V9h3.41v1.56h.05c.47-.9 1.6-1.85 3.29-1.85 3.52 0 4.17 2.31 4.17 5.31v6.43zM5.34 7.43c-1.14 0-2.07-.93-2.07-2.07 0-1.15.93-2.08 2.07-2.08 1.15 0 2.08.93 2.08 2.08 0 1.14-.93 2.07-2.08 2.07zM7.12 20.45H3.55V9h3.57v11.45z"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="mailto:alexiscode349@gmail.com"
-          aria-label="Email"
-          class="hover:text-gray-700"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 13.065 0 6.004v12.992A1.003 1.003 0 0 0 1 20h22a1.003 1.003 0 0 0 1-1.004V6.004l-12 7.061zM12 11.07 24 4.004H0l12 7.066z"
-            ></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
+    <!-- Descripción accesible -->
+    <p class="text-sm text-gray-700 leading-relaxed">
+      Creando experiencias digitales modernas con amor al detalle.
+    </p>
+
+    <!-- Copyright -->
+    <p class="text-xs text-gray-500 mt-2">
+      © 2025 KRCode. Todos los derechos reservados.
+    </p>
+
+    <!-- Créditos de ilustraciones -->
+    <p class="text-xs text-gray-500">
+      Ilustraciones cortesía de
+      <a
+        href="https://storyset.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-violet-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 rounded"
+      >
+        Storyset
+      </a>
+    </p>
+  </ContainerCenter>
 </footer>

@@ -3,52 +3,80 @@ import { Icon } from "astro-icon/components";
 import ContainerCenter from "./ContainerCenter.astro";
 import { myContact } from "@data/dataContact";
 import { twMerge } from "tailwind-merge";
+import { Image } from "astro:assets";
+import Avatar from "@assets/my-avatar.png";
 import MyTitle from "./MyTitle.astro";
 ---
 
 <section
   id="contacto"
-  class="px-4 py-16 bg-gray-50 text-gray-900 flex justify-center items-center"
+  class="px-4 py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-900 flex justify-center items-center"
   aria-labelledby="contact-title"
 >
   <ContainerCenter class="laptop:max-w-4xl">
-    <header class="mb-10 text-center px-2">
-      <MyTitle idTitle="contact-title"> ¿Listo para conectar? </MyTitle>
-      <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
+    <header class="text-center px-2">
+      <MyTitle idTitle="contact-title">¿Listo para conectar?</MyTitle>
+      <p
+        class="text-gray-700 text-base sm:text-lg max-w-xl mx-auto my-3 leading-relaxed"
+      >
         Elige tu canal favorito y empecemos a trabajar en algo que te emocione.
         ¡Estoy a un mensaje de distancia!
       </p>
     </header>
 
-    <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
-      <!-- Card genérica -->
+    <!-- Avatar flotante -->
+    <div class="relative flex justify-center items-center mb-2">
+      <div class="relative w-28 h-28 sm:w-36 sm:h-36">
+        <div
+          class="absolute inset-0 rounded-full bg-violet-200 blur-2xl opacity-50 animate-pulse"
+        >
+        </div>
+        <Image
+          src={Avatar}
+          alt="Foto de Alexis Chim, desarrollador web"
+          class="relative w-full h-full rounded-full border-2 border-violet-600 shadow-lg transform hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <!-- Cards de contacto -->
+    <nav
+      aria-label="Opciones de contacto"
+      class="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2"
+    >
       {
         myContact.map(({ href, bg, textColor, title, name, desc, icon }) => (
           <a
             href={href}
-            class="group flex items-center gap-3 p-4 sm:p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+            class="group flex items-center gap-4 p-5 sm:p-6 bg-white border rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-violet-500 transition-all duration-200"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Contáctame por ${title}`}
           >
-            <div class={`p-3 rounded-xl ${bg} transition-colors`}>
+            <div
+              class={`flex-shrink-0 p-3 rounded-xl ${bg} transition-transform duration-200 group-hover:scale-110`}
+              aria-hidden="true"
+            >
               <Icon
                 name={icon}
                 class={twMerge("h-6 w-6", textColor)}
                 is:inline
-                aria-hidden="true"
               />
             </div>
             <div class="min-w-0">
-              <h3 class="font-semibold text-xs sm:text-sm text-gray-500">
+              <h3 class="font-semibold text-xs sm:text-sm text-gray-600">
                 {title}
               </h3>
-              <h2 class="font-semibold text-lg sm:text-xl truncate">{name}</h2>
-              <p class="text-gray-500 text-xs sm:text-sm">{desc}</p>
+              <h2 class="font-semibold text-lg sm:text-xl truncate text-gray-900">
+                {name}
+              </h2>
+              <p class="text-gray-600 text-xs sm:text-sm">{desc}</p>
             </div>
           </a>
         ))
       }
-    </div>
+    </nav>
   </ContainerCenter>
 </section>
