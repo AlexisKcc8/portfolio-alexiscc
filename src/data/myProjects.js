@@ -1,7 +1,7 @@
 export const myProjects = [
   {
     urlImg: "/projects/LandingPage-FotoGaby.webp",
-    nameProject: "Landing page Foto y Video Gaby",
+    nameProject: "Foto y Video Gaby landing page",
     description:
       "Construido con Astro 5 y React 19. Utilicé Tailwind CSS 4 para un diseño mobile-first, y AOS para animaciones sutiles que aportan dinamismo sin sacrificar velocidad.",
     urlRepo: "https://github.com/AlexisKcc8/proyecto-foto-y-video-gaby.git",
@@ -9,19 +9,19 @@ export const myProjects = [
   },
   {
     urlImg: "/projects/LandingPage-Servitec-Halacho.webp",
-    nameProject: "Landing page Servitec Halachó",
+    nameProject: "Servitec Halachó landing page",
     description:
       "Desarrollada con Astro 5 y React 19. La interfaz, creada con Tailwind CSS 4, por animaciones AOS y astro-icon junto a  tailwind-merge para mantener un código limpio y fácil de escalar.",
     urlRepo: "https://github.com/AlexisKcc8/proyecto-servitec.git",
     urlLive: "https://servitec-halacho.netlify.app/",
   },
   {
-    urlImg: "/projects/CodeChat.webp",
-    nameProject: "CodeChat: Chatea y comparte.",
+    urlImg: "/projects/Family-Medical.webp",
+    nameProject: "Family Medical landing page",
     description:
-      "Desarrollada con React, Context API y Firebase. Autenticación integrada, mensajes instantáneos y estilos personalizados con Sass.",
-    urlRepo: "https://github.com/AlexisKcc8/chat-realtime-react-kr.git",
-    urlLive: "https://codechat-alx-kr.netlify.app",
+      "Landing page moderna creada con React, Bootstrap y Sass. Animaciones suaves con Animate.css, contadores dinámicos y galería interactiva con PhotoSwipe.",
+    urlRepo: "https://family-medical-dev.netlify.app/",
+    urlLive: "https://github.com/AlexisKcc8/landing-page-family-medical",
   },
   {
     urlImg: "/projects/easybank-mobile.webp",
